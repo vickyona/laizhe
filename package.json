@@ -2,7 +2,7 @@
   "name": "laizhe",
   "version": "1.0.0",
   "description": "A Vue.js project",
-  "author": "vickyona <736256266@qq.com>",
+  "author": "shenglong.li <913937000@qq.com>",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",

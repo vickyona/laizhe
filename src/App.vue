@@ -5,11 +5,9 @@
 </template>
 
 <script>
-export default {
-  name: 'app'
-}
+export default {}
 </script>
 
 <style>
-
+	@import "./reset.css";
 </style>
