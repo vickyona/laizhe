@@ -8,7 +8,7 @@
  			输入城市/景点/游玩主题
  		</div>
  		<div class="header-right">
- 			北京
+ 			上海
  		</div>
  	</header>
 </template>
