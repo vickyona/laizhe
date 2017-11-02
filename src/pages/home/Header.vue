@@ -1,10 +1,10 @@
 <template>
  	<header class="header">
  		<div class="header-left">
-			 <i class="iconfont header-back">&#xe679;</i>			 
+			 <i class="iconfont">&#xe705;</i>			 
 		 </div>
  		<div class="header-title">
-			 <i class="iconfont">&#xe65c;</i>
+			 <i class="iconfont">&#xe6ae;</i>
  			输入城市/景点/游玩主题
  		</div>
  		<div class="header-right">
@@ -18,27 +18,11 @@ export default {};
 </script>
 
 <style>
-@font-face {
-  font-family: "iconfont";
-  src: url(../../assets/iconfont/iconfont.eot);
-  src: url(../../assets/iconfont/iconfont.eot#iefix) format("embedded-opentype"),
-    url(../../assets/iconfont/iconfont.woff) format("woff"),
-    url(../../assets/iconfont/iconfont.ttf) format("truetype"),
-    url(../../assets/iconfont/iconfont.svg) format("svg");
-}
-.iconfont {
-  color: #ccc;
-  font-family: "iconfont" !important;
-  font-size: 16px;
-  font-style: normal;
-  -webkit-font-smoothing: antialiased;
-  -webkit-text-stroke-width: 0.2px;
-  -moz-osx-font-smoothing: grayscale;
-}
 .header {
   position: relative;
   height: 0.88rem;
   background: #00bcd4;
+  overflow: hidden;
 }
 .header-back {
   color: #fff;
