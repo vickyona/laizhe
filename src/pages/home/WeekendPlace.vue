@@ -24,16 +24,16 @@ export default {
         {
           path: require("../../assets/weekend/week1.jpg"),
           title: "北京温泉排行榜",
-          slogan: "细数北京温泉，",
+          slogan: "细数北京温泉，温暖你的冬天",
         },
         {
           path: require("../../assets/weekend/week2.jpg"),
-          title: "北京温泉排行榜",
-          slogan: "细数北京温泉，",
+          title: "寻找北京的皇城范儿",
+          slogan: "数百年的宫廷庙宇，至今依旧威严霸气",
         },
         {
           path: require("../../assets/weekend/week3.jpg"),
-          title: "北京温泉排行榜",
+          title: "北京必旅",
           slogan: "细数北京温泉，",
         },
         {
@@ -78,6 +78,9 @@ export default {
     width: 100%;
     height: 0;
     padding-bottom: 37.4375%;
+  }
+  img{
+    width: 100%;
   }
   .image-ready{
     background: none !important;
