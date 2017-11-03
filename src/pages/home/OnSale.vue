@@ -14,6 +14,7 @@
             <div></div>
             <div></div>
         </div>
+        <div id="fixed"></div>
     </div>
 </template>
 <script>
@@ -44,22 +45,26 @@ export default {};
 }
 #stage2 {
   height: 1.4rem;
+  width: 100%;
   margin-top: 0.2rem;
   display: flex;
 }
 #stage2 > div {
+  height: 100%;
   box-sizing: border-box;
   width: 50%;
 }
 #stage2 > div:nth-child(1) {
   background: url(../../assets/sale/sale1.png)no-repeat #fff;
-  background-size: cover;
+  background-position: center;
+  background-size: auto 100%;
   border: 1px solid #f4f4f4;
   border-left: none;
 }
 #stage2 > div:nth-child(2) {
   background: url(../../assets/sale/sale2.png)no-repeat #fff;
-  background-size: cover;
+  background-position: center;
+  background-size: auto 100%;
   border-top: 1px solid #f4f4f4;
   border-bottom: 1px solid #f4f4f4;
 }

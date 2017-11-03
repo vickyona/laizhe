@@ -54,6 +54,7 @@ export default {
 </script>
 <style>
 .hot-title {
+  clear: both;
   height: 0.8rem;
   padding-left: 0.26rem;
   line-height: 0.8rem;
