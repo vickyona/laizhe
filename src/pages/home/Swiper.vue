@@ -35,8 +35,11 @@ export default {
 </script>
 
 <style>
-.swiper-slide {
-  float: left;
+.con {
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  padding-bottom: 31.25%;
 }
 img {
   width: 100%;
