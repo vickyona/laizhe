@@ -74,6 +74,9 @@ export default {
   height: 0;
   padding-bottom: 37.4375%;
 }
+img{
+  width: 100%;
+}
 .image-ready {
   background: none !important;
 }
