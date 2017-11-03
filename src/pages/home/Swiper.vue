@@ -19,7 +19,6 @@ export default {
         autoplay: 3000,
         direction: "horizontal",
         spaceBetween: 0,
-        effect: "coverflow",
         autoHeight: true,
         paginationType: "bullets",
         pagination: ".swiper-pagination",
@@ -34,7 +33,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .con {
   overflow: hidden;
   width: 100%;
