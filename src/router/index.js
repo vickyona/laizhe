@@ -9,10 +9,16 @@ export default new Router({
   routes: [{
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
+
   },{
     path: '/city',
     name: 'City',
     component: City,
+    children:[{
+      path:"/data",
+      name:"Data",
+      component:City
+    }]
   }]
 })

@@ -1,14 +1,24 @@
 <template>
 	<div>
  		<city-header/>
+ 		<city-list ></city-list>
  	</div>
 </template>
 
 <script>
-import HeaderComponent from "./Header";
+import CityHeaderComponent from "./CityHeader";
+import CityListComponent from "./CityList";
+import axios from "axios";
+
 export default {
   components: {
-    "city-header": HeaderComponent,
+    "city-header": CityHeaderComponent,
+    "city-list": CityListComponent,
+  },
+  mounted() {
+  	axios.get("/city/data").then( res => {
+  		var result = res.data;
+  	});
   }
 };
 </script>
