@@ -1,5 +1,5 @@
 <template>
-	<div id="blank-suggesst" class="suggest">
+	<div id="blank-suggest" class="suggest">
 		<div class="suggest-list">
 			<div class="history-head"></div>
 			<div class="history-counter"></div>
@@ -7,7 +7,7 @@
 		<div class="hotlist">
 			<div class="hostsearch-head">
 				<span class="hotsearch-title">热门搜索</span>
-				<span class="hotsearch-refreshoption">
+				<span class="hotsearch-refreshoption" @click="handelRefreshClick()">
 					<i class="iconfont hotsearch-refreshicon">&#xe790;</i>
 					<span class="iconfont hotsearch-refreshtext">换一批</span>
 				</span>
@@ -20,7 +20,7 @@
 						</div>
 					</div>
 					<div class="hotsearch-itemcon sight-maxline">
-						<div class="hotsearch-iteminner " >
+						<div class="hotsearch-iteminner " ref="items">
 							<a class="hotsearch-item" v-for="item in hotSearchItem">{{item}}</a>
 						</div>
 					</div>
@@ -32,7 +32,7 @@
 						</div>
 					</div>
 					<div class="hotsearch-itemcon region-maxline">
-						<div class="hotsearch-iteminner " >
+						<div class="hotsearch-iteminner " ref="cityItems">
 							<a class="hotsearch-cityitem" v-for="item in hotSearchCityItem">{{item}}</a>
 						</div>
 					</div>
@@ -53,10 +53,20 @@ export default {
 			],
 			hotSearchCityItem:[
 				"广州","三亚","上海","苏州","厦门","重庆","成都","天津","西安","南京","深圳","宁波","昆明","大连","桂林","清远","杭州","惠州","福州","武汉"
-			]
+			],
+			itemTop:[0,1.8,3.6,5.4,6.3],
+			cityItemTop:[0,0.9,1.8,2.7,3.6]
+		}
+	},
+	methods:{
+		handelRefreshClick:function(){
+			var itemTopNum = this.$data.itemTop[Math.floor(Math.random()*this.$data.itemTop.length)];
+			var cityItemTopNum = this.$data.cityItemTop[Math.floor(Math.random()*this.$data.cityItemTop.length)];
+			this.$refs.items.style.top = -itemTopNum + "rem";
+			this.$refs.cityItems.style.top = -cityItemTopNum + 'rem';
 		}
 	}
-
+    
 };
 </script>
 <style>
