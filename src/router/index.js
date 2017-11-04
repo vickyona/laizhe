@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/pages/home/Home'
 import Swiper from '@/pages/home/Swiper'
+import City from '@/pages/city/City'
 
 Vue.use(Router)
 export default new Router({
@@ -9,9 +10,9 @@ export default new Router({
     path: '/',
     name: 'Home',
     component: Home
-  }, {
-    path: '/',
-    name: '轮播',
-    component: Swiper,
+  },{
+    path: '/city',
+    name: 'City',
+    component: City,
   }]
 })

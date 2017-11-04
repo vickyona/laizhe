@@ -7,9 +7,6 @@
 			 <i class="iconfont">&#xe6ae;</i>
  			输入城市/景点/游玩主题
  		</div>
- 		<div class="header-right">
- 			上海
- 		</div>
  	</header>
 </template>
 
