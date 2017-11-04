@@ -1,11 +1,11 @@
 <template>
 	<div>
- 		<home-header/>
+		<home-header/>
 		 <swiper-content></swiper-content>
-     <navBoard-content></navBoard-content>
-     <onSale-content></onSale-content>
-     <hotPlace-content></hotPlace-content>
- 	</div>
+	 <navBoard-content></navBoard-content>
+	 <onSale-content></onSale-content>
+	 <hotPlace-content></hotPlace-content>
+	</div>
 </template>
 
 <script>
@@ -16,11 +16,11 @@ import OnSale from "./OnSale";
 import HotPlace from "./HotPlace";
 export default {
   components: {
-    "home-header": HeaderComponent,
-    "swiper-content": SwiperContent,
-    "navBoard-content": NavBoard,
-    "onSale-content": OnSale,
-    "hotPlace-content": HotPlace
+	"home-header": HeaderComponent,
+	"swiper-content": SwiperContent,
+	"navBoard-content": NavBoard,
+	"onSale-content": OnSale,
+	"hotPlace-content": HotPlace
   }
 };
 </script>
