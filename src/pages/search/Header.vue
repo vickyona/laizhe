@@ -1,11 +1,10 @@
 <template>
     <header class="header">
-        <a class="iconfont header-left">&#xe705;</a>    
+        <a class="iconfont header-left" href="#/">&#xe705;</a>    
         <h1 class="header-title">
             <input type="text" class="search-input" placeholder="输入城市或景点">    
         </h1>
-        
-        <span class="header-right">
+        <span class="search-right">
             搜索
         </span>
     </header>
@@ -54,7 +53,7 @@
     font-size: .28rem;
     border-radius: .06rem;
 }
-.header-right {
+.search-right {
   float: right;
   width: 1.08rem;
   line-height: 0.88rem;

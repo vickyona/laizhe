@@ -3,10 +3,10 @@
  		<div class="header-left">
 			 <i class="iconfont">&#xe705;</i>			 
 		 </div>
- 		<div class="header-title">
+ 		<a class="header-title" href="#/search">
 			 <i class="iconfont">&#xe6ae;</i>
  			输入城市/景点/游玩主题
- 		</div>
+ 		</a>
  		<div class="header-right">
  			北京
  		</div>

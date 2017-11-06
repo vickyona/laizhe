@@ -16,3 +16,4 @@ export default new Router({
 		component:Search
 	}]
 })
+
