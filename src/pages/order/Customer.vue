@@ -9,7 +9,7 @@
 				<span class="reduce" @click="handleReduce">
 					<span></span>
 				</span>
-				<input type="text" :max="num" min="1" value=1 ref="inputbox">
+				<input type="text" value=1 ref="inputbox" @input="numChange" @blur="InputBlur">
 				<span class="add" @click="handleAdd">
 					<span class="line"></span>
 					<span class="vertical-line"></span>
@@ -60,8 +60,40 @@
 			handleReduce:function(){
 				if(this.$refs.inputbox.value != 1){
 					this.$refs.inputbox.value = parseInt(this.$refs.inputbox.value) - 1;
-					this.listNum.pop()
+					this.listNum.pop();
 				}
+			},
+			numChange:function(){
+				var inputNum = this.$refs.inputbox.value;
+				if(inputNum != ''){
+					if(!Number(inputNum)){
+						this.$refs.inputbox.value = 1;
+						this.listNum = [1];
+
+					}else if(parseInt(inputNum) == 0){
+						this.$refs.inputbox.value = 1;
+						this.listNum = [1];
+
+					}else if(parseInt(inputNum) > 5){
+						this.$refs.inputbox.value = 5;
+						this.listNum = [1,2,3,4,5];
+
+					}else{
+						var ls = [];
+						for(var i = 1 ; i < parseInt(inputNum) + 1 ; i++){
+							ls.push(i);
+						}
+						this.listNum = ls;
+					}
+				}
+				
+			},
+			InputBlur:function(){
+				if(this.$refs.inputbox.value == ''){
+					this.$refs.inputbox.value = 1;
+					this.listNum = [1];
+				}
+
 			}
 		}
 	}

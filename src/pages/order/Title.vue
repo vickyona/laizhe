@@ -1,19 +1,25 @@
 <template>
 	<div id="title">
 		<div class="name">
-			<h3>{{title}}</h3>
+			<h3 class="commodity">{{title}}</h3>
 			<div class="tag">
-				<p>
-					<img src="../../assets/order/time.png" alt="">{{time}}
+				<p class="time">
+					<img src="../../assets/order/time.png" alt="" class="timeImg">{{time}}
 				</p>
-				<ul v-for="item in info" :key="item"> 
-					<li><img src="../../assets/order/02.png" alt="">{{item}}</li>
+				<ul v-for="item in info" :key="item" class="prompt"> 
+					<li class="promptList"><img src="../../assets/order/02.png" alt="" class="promptImg">{{item}}</li>
 				</ul>
 			</div>
 		</div>
 		<div class="price">
-			<p><span>￥<em>{{price}} </em></span>/张</p>
-			<a href="##">预订须知</a>
+			<p class="price_content">
+				<span class="total">
+					￥
+					<em class="number">{{price}} </em>
+				</span>
+				/张
+			</p>
+			<a href="##" class="link">预订须知</a>
 		</div>
 	</div>
 </template>
@@ -39,24 +45,30 @@
 		display: flex;
 		justify-content: space-between;
 	}
-	#title .name h3{
+	#title .name{
+		width:5.4rem;
+	}
+	#title .commodity{
 		color: #212121;
 	    font-size: .32rem;
 	    line-height: .44rem;
 	    margin-bottom: .04rem;
+	    overflow: hidden;
+	    white-space: nowrap;
+	    text-overflow: ellipsis;
 	}
-	#title .name .tag p,#title .name .tag ul li{
+	#title .time,#title .promptList{
 		line-height: .44rem;
 	    margin-right: .2rem;
 	    color: #616161;
 	    font-size: .24rem;
 	}
-	#title .name .tag p img,#title .name .tag ul li img{
+	#title .timeImg,#title .promptImg{
 		width: .24rem;
 	    height: .24rem;
 	    margin-right: .08rem;
 	}
-	#title .name .tag{
+	#title .tag{
 		display: flex;
 		justify-content: flex-start;
 	}
@@ -64,20 +76,20 @@
 		width: 1.8rem;
     	text-align: right;
 	}
-	#title .price p{
+	#title .price_content{
 		height: .44rem;
 	    line-height: .44rem;
 	    color: #9e9e9e;
 	    font-size: .24rem;
 	}
-	#title .price p span{
+	#title .total{
 		color:#ff8300;
 	}
-	#title .price p span em{
+	#title .number{
 		font-style: normal;
     	font: .4rem Tahoma,Helvetica,sans-serif;
 	}
-	#title .price a{
+	#title .link{
 		line-height: .32rem;
 	    color: #00bcd4;
 	    font-size: .28rem;

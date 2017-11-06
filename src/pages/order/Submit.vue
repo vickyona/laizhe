@@ -1,8 +1,8 @@
 <template>
 	<header class="footer">
  		<div class="price">
-			<em>产品价格￥</em>
-			<span>{{price}}</span>			 
+			<em class="title">产品价格￥</em>
+			<span class="number">{{price}}</span>			 
 		 </div>
  		<div class="submit">
  			提交订单
@@ -38,15 +38,18 @@
 	    align-items: flex-end;
 	    font-style:normal;
 	}
-	.footer .price em{
+	.footer .title{
 		padding-bottom: .25rem; 
 	}
-	.footer .price span{
+	.footer .number{
 		display:block;
 		font-size:.48rem;
 		text-indent: 0rem;
 		font-weight: bold;
 		line-height: 1rem;
+		overflow:hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
 	}
 	.footer .submit{
 		background: #ff9800;
