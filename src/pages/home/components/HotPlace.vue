@@ -2,11 +2,11 @@
     <div id="hotPlace">
         <div class="hot-title">热销推荐</div>
         <div id="hot-stage" v-for="item in hotInfo" :key="item.name">
-            <img :src="item.path" alt="">
+            <img :src="item.path" alt="" class="hot-place-img">
             <div id="hot-content">
-                <span>{{item.name}}</span>
-                <span>{{item.slogan}}</span>
-                <span>¥<b>{{item.price}}</b><span>起</span></span>
+                <span class="hot-place-name">{{item.name}}</span>
+                <span class="hot-place-slogan">{{item.slogan}}</span>
+                <span class="hot=place-price">¥<b>{{item.price}}</b><span>起</span></span>
             </div>
         </div>
         <div class="hot-more">查看所有产品</div>
@@ -18,31 +18,31 @@ export default {
     return {
       hotInfo: [
         {
-          path: require("../../assets/hot/hot1.jpg"),
+          path: require("../../../assets/hot/hot1.jpg"),
           name: "故宫",
           slogan: "东方宫殿建筑代表作，世界宫殿建筑典范",
           price: "65"
         },
         {
-          path: require("../../assets/hot/hot2.jpg"),
+          path: require("../../../assets/hot/hot2.jpg"),
           name: "八达岭长城",
           slogan: "不到长城非好汉",
           price: "25"
         },
         {
-          path: require("../../assets/hot/hot3.jpg"),
+          path: require("../../../assets/hot/hot3.jpg"),
           name: "颐和园",
           slogan: "保存完成的一座皇家行宫御苑",
           price: "1"
         },
         {
-          path: require("../../assets/hot/hot4.jpg"),
+          path: require("../../../assets/hot/hot4.jpg"),
           name: "北京欢乐谷",
           slogan: "七大主题园区带你畅享北京欢乐谷",
           price: "13"
         },
         {
-          path: require("../../assets/hot/hot5.jpg"),
+          path: require("../../../assets/hot/hot5.jpg"),
           name: "慕田峪长城",
           slogan: "秀美长城，关键是人少",
           price: "19.1"
@@ -66,7 +66,7 @@ export default {
   padding: 0.24rem;
   border-bottom: 1px solid #f4f4f4;
 }
-#hot-stage > img {
+#hot-stage > .hot-place-img {
   float: left;
   width: 1.4rem;
 }
@@ -75,7 +75,7 @@ export default {
   margin-left: 1.6rem;
   padding: 0.04rem;
 }
-#hot-content > span:nth-child(1) {
+#hot-content > .hot-place-name {
   overflow: hidden;
   margin-top: 0.04rem;
   margin-bottom: 0.1rem;
@@ -84,7 +84,7 @@ export default {
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-#hot-content > span:nth-child(2) {
+#hot-content > .hot-place-slogan {
   overflow: hidden;
   margin-bottom: 0.1rem;
   height: 0.4rem;
@@ -93,15 +93,15 @@ export default {
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-#hot-content > span:nth-child(3) {
+#hot-content > .hot-place-price {
   margin-left: 1.6rem;
   color: #ff8300;
 }
-#hot-content > span:nth-child(3) > b {
+#hot-content > .hot-place-price > b {
   font-size: 0.36rem;
   padding: 0.04rem;
 }
-#hot-content > span:nth-child(3) > span {
+#hot-content > .hot-place-price > span {
   color: #9e9e9e;
   font-size: 0.24rem;
 }
