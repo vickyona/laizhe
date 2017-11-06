@@ -22,27 +22,27 @@ export default {
     return {
       weekInfo: [
         {
-          path: require("../../assets/weekend/week1.jpg"),
+          path: require("../../../assets/weekend/week1.jpg"),
           title: "北京温泉排行榜",
           slogan: "细数北京温泉，温暖你的冬天"
         },
         {
-          path: require("../../assets/weekend/week2.jpg"),
+          path: require("../../../assets/weekend/week2.jpg"),
           title: "寻找北京的皇城范儿",
           slogan: "数百年的宫廷庙宇，至今依旧威严霸气"
         },
         {
-          path: require("../../assets/weekend/week3.jpg"),
+          path: require("../../../assets/weekend/week3.jpg"),
           title: "北京必游TOP10",
           slogan: "来北京必去的景点非这些地方莫属"
         },
         {
-          path: require("../../assets/weekend/week4.jpg"),
+          path: require("../../../assets/weekend/week4.jpg"),
           title: "登高望远秋色佳",
           slogan: "山顶满眼彩色，此情此景醉了"
         },
         {
-          path: require("../../assets/weekend/week5.jpg"),
+          path: require("../../../assets/weekend/week5.jpg"),
           title: "秋高气爽去礼佛",
           slogan: "秋风伴着美妙经声，品尝秋的另一番滋味"
         }
@@ -53,7 +53,9 @@ export default {
 </script>
 <style>
 .week-title {
+  width: 4rem;
   height: 0.8rem;
+  overflow: hidden;
   padding-left: 0.26rem;
   line-height: 0.8rem;
   color: #212121;

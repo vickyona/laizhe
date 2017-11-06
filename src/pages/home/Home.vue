@@ -1,29 +1,29 @@
 <template>
 	<div>
-		<home-header/>
-		 <swiper-content></swiper-content>
-     <navBoard-content></navBoard-content>
-     <onSale-content></onSale-content>
-     <hotPlace-content></hotPlace-content>
-     <weekendplace-content></weekendplace-content>
+		<home-header></home-header>
+		<home-swiper></home-swiper>
+        <home-icon-swiper></home-icon-swiper>
+        <home-hotSale></home-hotSale>
+        <home-hotPlace></home-hotPlace>
+        <home-weekendplace></home-weekendplace>
  	</div>
 </template>
 
 <script>
-import HeaderComponent from "./Header";
-import SwiperContent from "./Swiper";
-import NavBoard from "./NavBoard";
-import OnSale from "./OnSale";
-import HotPlace from "./HotPlace";
-import WeekendPlace from "./WeekendPlace";
+import Header from "./components/Header";
+import Swiper from "./components/Swiper";
+import IconSwiper from "./components/IconSwiper";
+import HotSale from "./components/HotSale";
+import HotPlace from "./components/HotPlace";
+import WeekendPlace from "./components/WeekendPlace";
 export default {
   components: {
-    "home-header": HeaderComponent,
-    "swiper-content": SwiperContent,
-    "navBoard-content": NavBoard,
-    "onSale-content": OnSale,
-    "hotPlace-content": HotPlace,
-    "weekendplace-content": WeekendPlace
+    "home-header": Header,
+    "home-swiper": Swiper,
+    "home-icon-swiper": IconSwiper,
+    "home-hotSale": HotSale,
+    "home-hotPlace": HotPlace,
+    "home-weekendplace": WeekendPlace
   }
 };
 </script>
