@@ -8,17 +8,11 @@
 <script>
 import CityHeaderComponent from "./CityHeader";
 import CityListComponent from "./CityList";
-import axios from "axios";
 
 export default {
   components: {
     "city-header": CityHeaderComponent,
-    "city-list": CityListComponent,
-  },
-  mounted() {
-  	axios.get("/city/data").then( res => {
-  		var result = res.data;
-  	});
+    "city-list": CityListComponent
   }
 };
 </script>
