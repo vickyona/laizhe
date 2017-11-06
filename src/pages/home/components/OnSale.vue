@@ -49,7 +49,8 @@ export default {};
   margin-top: 0.2rem;
   display: flex;
 }
-#onSale-stage2 > div {
+#onSale-stage2 > .onSale-stage2-left,
+#onSale-stage2 > .onSale-stage2-right {
   height: 100%;
   box-sizing: border-box;
   width: 50%;

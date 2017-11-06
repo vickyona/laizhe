@@ -1,7 +1,7 @@
 <template>
  <swiper :options="swiperOption" id="swiper" ref="mySwiper">
-      <swiper-slide><div v-for="(item,index) in imgs" v-if="index<8" :key="item.name" class="swiper-item"><img :src="item.path" alt=""><p>{{item.name}}</p></div></swiper-slide>
-      <swiper-slide><div v-for="(item,index) in imgs" v-if="7 < index && index < 16" :key="item.name" class="swiper-item"><img :src="item.path" alt=""><p>{{item.name}}</p></div></swiper-slide>
+      <swiper-slide><div v-for="(item,index) in imgs" v-if="index<8" :key="item.name" class="swiper-item"><img :src="item.path" alt=""  class="icon-swiper-img"><p class="icon-swiper-name">{{item.name}}</p></div></swiper-slide>
+      <swiper-slide><div v-for="(item,index) in imgs" v-if="7 < index && index < 16" :key="item.name" class="swiper-item"><img :src="item.path" alt=""  class="icon-swiper-img"><p class="icon-swiper-name">{{item.name}}</p></div></swiper-slide>
       <div class="swiper-pagination"  slot="pagination"></div>
   </swiper>
 </template>
@@ -119,11 +119,11 @@ export default {
   padding-top: 0.3rem;
   text-align: center;
 }
-#swiper > .swiper-wrapper .swiper-slide > .swiper-item > p {
+#swiper > .swiper-wrapper .swiper-slide > .swiper-item > .icon-swiper-name {
   margin-top: 0.2rem;
   font-size: 0.28rem;
 }
-#swiper > .swiper-wrapper .swiper-slide > .swiper-item > img {
+#swiper > .swiper-wrapper .swiper-slide > .swiper-item > .icon-swiper-img {
   width: 0.66rem;
 }
 </style>

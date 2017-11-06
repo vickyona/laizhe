@@ -6,7 +6,7 @@
             <div id="hot-content">
                 <span class="hot-place-name">{{item.name}}</span>
                 <span class="hot-place-slogan">{{item.slogan}}</span>
-                <span class="hot=place-price">¥<b>{{item.price}}</b><span>起</span></span>
+                <span class="hot-place-price">¥<b class="price-tag">{{item.price}}</b><span class="price-baseOn">起</span></span>
             </div>
         </div>
         <div class="hot-more">查看所有产品</div>
@@ -97,11 +97,11 @@ export default {
   margin-left: 1.6rem;
   color: #ff8300;
 }
-#hot-content > .hot-place-price > b {
+#hot-content > .hot-place-price > .price-tag {
   font-size: 0.36rem;
   padding: 0.04rem;
 }
-#hot-content > .hot-place-price > span {
+#hot-content > .hot-place-price > .price-baseon {
   color: #9e9e9e;
   font-size: 0.24rem;
 }
