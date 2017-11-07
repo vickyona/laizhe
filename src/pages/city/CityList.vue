@@ -1,13 +1,13 @@
 <template>
  	<div id="city">
     <div class="header-keyword">
-      <input type="text" placeholder="请输入城市名或拼音" class="city-keyword" />
+      <input type="text" placeholder="请输入城市名或拼音请输入城市名或拼音请输入城市名或拼音请输入城市名或拼音请输入城市名或拼音" class="city-keyword" />
     </div>
     <div class="city-group">
       <div class="city-group-title">您的位置</div>
       <div class="city-group-now">
         <div class="city-light">
-          <a href="" class="city-name city-select">北京</a>
+          <a href="" class="city-name city-select">北京北京北京北京北京</a>
         </div> 
       </div>
     </div>
@@ -68,7 +68,7 @@ export default {
       btext:true
     }
   },
-  created:function() {
+  created: function() {
      bus.$on("change",(message)=>{
       if( message == "" ){
         this.btext = false;
@@ -84,24 +84,23 @@ export default {
       var text = liElement.innerHTML;
       var positionElement = document.getElementById(text);
       
-      if( positionElement ){
+      if(positionElement){
         document.documentElement.scrollTop = positionElement.offsetTop - 44;
       }
-      
     }
   }
 };
 </script>
 
 <style>
-.header-keyword{
+.header-keyword {
   margin-top: .88rem;
   padding: 0 .2rem .1rem .2rem ;
   background: #00afc7;
   font-size: .26rem;
   color: #9e9e9e;
 }
-.city-keyword{
+.city-keyword {
   width: 100%;
   height: .3rem;
   line-height: .3rem;
@@ -110,18 +109,29 @@ export default {
   border: 0;
   border-radius: .06rem;
   text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
-.city-position{
+.city-position {
   font-size: .28rem;
 }
-.city-group-title{
+.city-group {
+  width: 100%;
+}
+.city-group-title {
+  width: 100%;
+  box-sizing: border-box;
   line-height: .54rem;
-  padding-left: .3rem;
+  padding: 0 .3rem;
   color: #616161;
   font-size: .26rem;
   border-bottom: 1px solid #ccc;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
-.city-group-now{
+.city-group-now {
   width: 100%;
   box-sizing: border-box;
   overflow: hidden; 
@@ -129,7 +139,7 @@ export default {
   background: #fff;
   border-bottom: 1px solid #ccc;
 }
-.city-light{
+.city-light {
   box-sizing: border-box;
   float: left;
   width: 33.33%;
@@ -139,40 +149,46 @@ export default {
   padding: .15rem .14rem .65rem .1rem;
 }
 
-.city-name{
+.city-name {
   display: block;
-  line-height: 28px;
+  line-height: 30px;
   text-align: center;
   border: .02rem solid #c9cccd;
   border-radius: .06rem;
   color: #212121;
-  height: .6rem;
   overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
-.city-select{
+.city-select {
   color: #00afc7;
   border-color: #00afc7;
 }
-.city-normal{
+.city-normal {
   display: block;
+  width: 100%;
+  box-sizing: border-box;
   line-height: .76rem;
-  padding-left: .2rem;
+  padding: 0 .2rem;
   font-size: .28rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   color: #212121;
   border-bottom: .02rem solid #ccc;
 }
-.city-center{
+.city-center {
   width: 100%;
   box-sizing: border-box;
   overflow: hidden; 
   background: #fff;
 }
-.right-sidebar{
+.right-sidebar {
   position: fixed;
   top: 108px;
   right: 0rem;
 }
-.city-letter{
+.city-letter {
   width: .32rem;
   height: .32rem;
   line-height: .32rem;

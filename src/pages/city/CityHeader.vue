@@ -5,8 +5,8 @@
 		</div>
  		<div class="city-header-right">
       <h1 class="city-header-title">
-        <span class="header-city" :class="a" v-on:touchstart="internalClick">国内</span>
-        <span class="header-city" :class="b" v-on:touchstart="foreignClick">国外</span>
+        <p class="header-city" :class="a" v-on:touchstart="internalClick">国内</p>
+        <p class="header-city" :class="b" v-on:touchstart="foreignClick">国外</p>
       </h1>
     </div>
  	</header>
@@ -48,36 +48,40 @@ export default {
   background: #00afc7;
   display: flex;
 }
-.city-header-left{
+.city-header-left {
   display: inline-block;
   width: .4rem;
   line-height: 0.88rem;
   padding: 0 .22rem;
   color: #fff;
 }
-.city-header-right{
+.city-header-right {
   flex: 1;
   line-height: .88rem;
   text-align: center
 }
-.city-header-title{
+.city-header-title {
   display: inline-block;
   height: .56rem;
   line-height: .56rem;
   text-align: center;
-  margin-left: -.42rem;
   margin-top: .15rem;
+  font-size: 0;
   border: .02rem solid #fff;
   border-radius: .06rem;
 }
-.header-city{
+.header-city {
   display: inline-block;
   width: 2rem;
+  height: .56rem;
+  white-space: nowrap;
   overflow: hidden;
-  font-size: 100%;
+  text-overflow: ellipsis;
   color: #fff;
+  font-size: .28rem;
+ 
 }
-.city-clickStyle{
+.city-clickStyle {
   background: #fff;
   color: #00afc7;
 }
