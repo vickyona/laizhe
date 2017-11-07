@@ -1,11 +1,11 @@
 <template>
  <swiper :options="swiperOption" id="swiper" ref="mySwiper">
-      <swiper-slide><img src="../../../assets/swipers/swiper1.jpg" alt=""></swiper-slide>
-      <swiper-slide><img src="../../../assets/swipers/swiper2.png" alt=""></swiper-slide>
-      <swiper-slide><img src="../../../assets/swipers/swiper3.jpg" alt=""></swiper-slide>
-      <swiper-slide><img src="../../../assets/swipers/swiper4.jpg" alt=""></swiper-slide>
-      <swiper-slide><img src="../../../assets/swipers/swiper5.jpg" alt=""></swiper-slide>
-      <swiper-slide><img src="../../../assets/swipers/swiper6.jpg" alt=""></swiper-slide>
+      <swiper-slide v-for="item in swiperInfo" :key="item.id">
+        <router-link :to="item.link">
+          <img :src="item.imgUrl" alt="">
+        </router-link>
+      </swiper-slide>
+      
       <div class="swiper-pagination"  slot="pagination"></div>
   </swiper>
 </template>
@@ -13,6 +13,7 @@
 <script>
 import { swiper, swiperSlide } from "vue-awesome-swiper";
 export default {
+  props: ["swiperInfo"],
   data() {
     return {
       swiperOption: {

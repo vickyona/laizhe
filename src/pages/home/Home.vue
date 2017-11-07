@@ -1,11 +1,11 @@
 <template>
 	<div>
 		<index-hearder/>
-		 <index-swiper></index-swiper>
-     <index-iconSwiper></index-iconSwiper>
+		 <index-swiper :swiperInfo="this.$store.state.swiperInfo"></index-swiper>
+     <index-iconSwiper :iconSwiperInfo="this.$store.state.iconSwiperInfo"></index-iconSwiper>
      <index-onSale></index-onSale>
-     <index-hotPlace></index-hotPlace>
-     <index-weekendPlace></index-weekendPlace>
+     <index-hotPlace :hotPlaceInfo="this.$store.state.hotPlaceInfo"></index-hotPlace>
+     <index-weekendPlace :weekendPlaceInfo="this.$store.state.weekendPlaceInfo"></index-weekendPlace>
  	</div>
 </template>
 
@@ -24,6 +24,11 @@ export default {
     "index-onSale": OnSale,
     "index-hotPlace": HotPlace,
     "index-weekendPlace": WeekendPlace
+  },
+  mounted() {
+    if (!this.$store.state.swiperInfo.length) {
+      this.$store.dispatch("getIndexInfo");
+    }
   }
 };
 </script>
