@@ -5,6 +5,7 @@ import Swiper from '@/pages/home/Swiper'
 import City from '@/pages/city/City'
 import Search from '@/pages/search/Search'
 import Order from '@/pages/order/Order'
+import Beijing from '@/pages/beijing/Beijing'
 Vue.use(Router)
 export default new Router({
   routes: [{
@@ -23,5 +24,9 @@ export default new Router({
     path: '/order',
     name: 'Order',
     component: Order,
+  },{
+    path: '/beijing',
+    name: 'Beijing',
+    component: Beijing,
   }]
 })
