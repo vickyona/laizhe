@@ -6,77 +6,56 @@
     <div class="city-group">
       <div class="city-group-title">您的位置</div>
       <div class="city-group-now">
-        <div class="city-light">
-          <a href="" class="city-name city-select">北京北京北京北京北京</a>
+        <div class="city-light" v-if="positionCity">
+          <a href="" class="city-name city-select">{{positionCity}}</a>
         </div> 
       </div>
     </div>
-    <!-- 国内的城市 -->
-    <div class="city-domestic" v-if="btext" id="city_top">
-      <div class="city-hot">
-          <div class="city-group-title">热门城市</div>
-          <div class="city-group-now">
-            <div class="city-light" v-for="item in hotDomCity" 
-            :key="item">
-              <a href="" class="city-name ">{{item}}</a>
-            </div> 
-          </div>
-      </div>
-      <!-- 22222 -->
-      <div class="city-hot" v-for="(items, index) in internalCity" v-bind:id="index">
-          <div class="city-group-title">{{index}}</div>
-          <div class="city-center" v-for="item in items">
-            <a href="" class="city-normal" >{{item}}</a>
-          </div>
-      </div>
-    </div>
+    
     <!-- 国外的城市 -->
-    <div class="city-domestic" v-else>
+    <div class="city-domestic">
       <div class="city-hot">
           <div class="city-group-title">热门城市</div>
           <div class="city-group-now">
-            <div class="city-light" v-for="item in hotAbroadCity" 
+            <div class="city-light" v-for="item in hotCity" 
             :key="item">
               <a href="" class="city-name ">{{item}}</a>
             </div> 
           </div>
       </div>
-      <div class="city-hot" v-for="(items, index) in foreignCity" v-bind:id="index">
+      <div class="city-hot" v-for="(items, index) in cities" v-bind:id="index">
           <div class="city-group-title">{{index}}</div>
           <div class="city-center" v-for="item in items">
             <a href="" class="city-normal">{{item}}</a>
           </div>
       </div>
     </div>
-    <ul class="right-sidebar" id="position" v-if="btext">
-      <li v-for="(items, index) in internalCity" class="city-letter" :key="index" @touchstart="handleTouchstart" @touchmove="handleTouchstart">{{index}}</li>
-    </ul>
-    <ul class="right-sidebar" id="position" v-else>
-      <li v-for="(items, index) in foreignCity" class="city-letter" :key="index" @touchstart="handleTouchstart">{{index}}</li>
+   
+    <ul class="right-sidebar" id="position">
+      <li v-for="(items, index) in cities" class="city-letter" :key="index" @touchstart="handleTouchstart">{{index}}</li>
     </ul>
   </div>
 </template>
 
 <script>
-import bus from "./bus.js";
+
 export default {
-  props: ["internalCity", "foreignCity"],
   data() {
     return {
-      hotDomCity: ["北京", "西安", "三亚", "丽江", "桂林", "成都", "上海", "西双版纳", "厦门", "长沙", "苏州", "大理", "广州", "杭州", "昆明", "重庆"],
       hotAbroadCity:["普吉岛", "清迈", "香港", "东京", "台北", "澳门", "巴厘岛", "曼谷", "芭提雅", "凯恩斯", "首尔", "新加坡", "济州岛", "迪拜", "沙巴", "苏梅岛"],
       btext:true
     }
   },
-  created: function() {
-     bus.$on("change",(message)=>{
-      if( message == "" ){
-        this.btext = false;
-        document.documentElement.scrollTop="0px";
-      }else{
-        this.btext = true;
-      }
-    })
+  computed: {
+    positionCity() {
+      return this.$store.state.foreign.positionCity;
+    },
+    hotCity() {
+      return this.$store.state.foreign.hotCity;
+    },
+    cities() {
+      return this.$store.state.foreign.cities;
+    }
   },
   methods: {
     handleTouchstart: function(e) {

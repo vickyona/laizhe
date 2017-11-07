@@ -5,35 +5,32 @@
 		</div>
  		<div class="city-header-right">
       <h1 class="city-header-title">
-        <p class="header-city" :class="a" v-on:touchstart="internalClick">国内</p>
-        <p class="header-city" :class="b" v-on:touchstart="foreignClick">国外</p>
+        <p class="header-city" :class="{'city-clickStyle': isActive}"  v-on:touchstart="internalClick">国内</p>
+        <p class="header-city" :class="{'city-clickStyle': !isActive}" v-on:touchstart="foreignClick">国外</p>
       </h1>
     </div>
  	</header>
 </template>
 
 <script>
-import bus from "./bus.js";
+import bus from "../bus.js";
 export default {
-  data(){
+  data() {
     return {
-      a:"city-clickStyle",
-      b:""
+      isActive:true
     }
+
   },
   methods: {
-    internalClick: function() {
-      this.a="city-clickStyle";
-      this.b = "";
-      bus.$emit("change", this.a)
-
+    internalClick: function(e) {
+      this.$store.commit("changeShow", "domestic");
+      this.isActive = true;
     },
     foreignClick: function() {
-      this.b="city-clickStyle";
-      this.a = "";
-      bus.$emit("change", this.a)
+      this.$store.commit("changeShow", "foreign");
+      this.isActive = false;
     },
-  }
+  },
 };
 </script>
 
