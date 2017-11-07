@@ -40,12 +40,6 @@
 <script>
 
 export default {
-  data() {
-    return {
-      hotAbroadCity:["普吉岛", "清迈", "香港", "东京", "台北", "澳门", "巴厘岛", "曼谷", "芭提雅", "凯恩斯", "首尔", "新加坡", "济州岛", "迪拜", "沙巴", "苏梅岛"],
-      btext:true
-    }
-  },
   computed: {
     positionCity() {
       return this.$store.state.foreign.positionCity;
