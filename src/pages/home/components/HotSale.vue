@@ -1,16 +1,16 @@
 <template>
     <div id="onSale">
-        <div id="stage1">
-            <div>
+        <div id="onSale-stage1">
+            <div class="onSale-stage1-left">
                 <i class="iconfont">&#xe611;</i>
                 <p >定位失败</p>
             </div>
-            <div>
+            <div class="onSale-stage1-right">
                 <i class="iconfont">&#xe64c;</i>
                 <p>5折泡温泉</p>                
             </div>
         </div>
-        <div id="stage2">
+        <div id="onSale-stage2">
             <div></div>
             <div></div>
         </div>
@@ -21,27 +21,27 @@
 export default {};
 </script>
 <style>
-#stage1 {
+#onSale-stage1 {
   height: 0.95rem;
   display: flex;
   background: #fff;
 }
-#stage1 > div {
+#onSale-stage1 > div {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 50%;
   box-shadow: border-box;
 }
-#stage1 > div:nth-child(1) {
+#onSale-stage1 > div:nth-child(1) {
   border-top: 1px solid #f4f4f4;
   border-right: 1px solid #f4f4f4;
 }
-#stage1 > div:nth-child(2) {
+#onSale-stage1 > div:nth-child(2) {
   border-top: 1px solid #f4f4f4;
 }
-#stage1 > div > p {
-  width:40%;
+#onSale-stage1 > div > p {
+  width: 40%;
   height: 0.28rem;
   overflow: hidden;
   margin-left: 0.04rem;
