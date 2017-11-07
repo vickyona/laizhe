@@ -19,27 +19,18 @@ export default new Vuex.Store({
             const {
               data
             } = response.data;
-            context.commit("changeSwiperInfo", data.swiperInfo);
-            context.commit("changeIconSwiperInfo", data.iconSwiperInfo);
-            context.commit("changeHotPlaceInfo", data.hotPlaceInfo);
-            context.commit("changeWeekendPlaceInfo", data.weekendPlaceInfo);
+            context.commit("changeSwiperInfo", data);
           }
         })
     }
   },
   mutations: {
     changeSwiperInfo(state, data) {
-      state.swiperInfo = data
-    },
-    changeIconSwiperInfo(state, data) {
-      state.iconSwiperInfo = data
-    },
-    changeHotPlaceInfo(state, data) {
-      state.hotPlaceInfo = data
-    },
-    changeWeekendPlaceInfo(state, data) {
-      state.weekendPlaceInfo = data
-    },
+      state.swiperInfo = data.swiperInfo;
+      state.iconSwiperInfo = data.iconSwiperInfo;
+      state.hotPlaceInfo = data.hotPlaceInfo;
+      state.weekendPlaceInfo = data.weekendPlaceInfo
+    }
   },
   getters: {}
 })
