@@ -23,7 +23,9 @@ export default {
 </script>
 <style>
 .week-title {
+  width: 4rem;
   height: 0.8rem;
+  overflow: hidden;
   padding-left: 0.26rem;
   line-height: 0.8rem;
   color: #212121;
