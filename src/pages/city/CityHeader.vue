@@ -1,23 +1,44 @@
 <template>
- 	<header class="ch-header">
- 		<div class="ch-header-left">
+ 	<header class="city-header">
+ 		<div class="city-header-left">
 			<i class="iconfont">&#xe705;</i>			 
 		</div>
- 		<div class="ch-header-right">
-      <h1 class="ch-header-title">
-        <span class="ch-header-city">国内</span>
-        <span class="ch-header-city">国外</span>
+ 		<div class="city-header-right">
+      <h1 class="city-header-title">
+        <span class="header-city" :class="a" v-on:touchstart="internalClick">国内</span>
+        <span class="header-city" :class="b" v-on:touchstart="foreignClick">国外</span>
       </h1>
     </div>
  	</header>
 </template>
 
 <script>
-export default {};
+import bus from "./bus.js";
+export default {
+  data(){
+    return {
+      a:"city-clickStyle",
+      b:""
+    }
+  },
+  methods: {
+    internalClick: function() {
+      this.a="city-clickStyle";
+      this.b = "";
+      bus.$emit("change", this.a)
+
+    },
+    foreignClick: function() {
+      this.b="city-clickStyle";
+      this.a = "";
+      bus.$emit("change", this.a)
+    },
+  }
+};
 </script>
 
 <style>
-.ch-header {
+.city-header {
   position: fixed;
   top: 0;
   left: 0;
@@ -27,19 +48,19 @@ export default {};
   background: #00afc7;
   display: flex;
 }
-.ch-header-left{
+.city-header-left{
   display: inline-block;
   width: .4rem;
   line-height: 0.88rem;
   padding: 0 .22rem;
   color: #fff;
 }
-.ch-header-right{
+.city-header-right{
   flex: 1;
   line-height: .88rem;
   text-align: center
 }
-.ch-header-title{
+.city-header-title{
   display: inline-block;
   height: .56rem;
   line-height: .56rem;
@@ -49,12 +70,16 @@ export default {};
   border: .02rem solid #fff;
   border-radius: .06rem;
 }
-.ch-header-city{
+.header-city{
   display: inline-block;
   width: 2rem;
   overflow: hidden;
   font-size: 100%;
   color: #fff;
+}
+.city-clickStyle{
+  background: #fff;
+  color: #00afc7;
 }
 </style>
 

@@ -22,13 +22,6 @@ const autoOpenBrowser = !!config.dev.autoOpenBrowser
 const proxyTable = config.dev.proxyTable
 
 const app = express()
-var goodData = require("../src/assets/data/data.json");
-var router = express.Router();
-router.get("/city/data",( req, res ) => {
-  res.json( goodData );
-});
-app.use(router);
-
 const compiler = webpack(webpackConfig)
 
 const devMiddleware = require('webpack-dev-middleware')(compiler, {

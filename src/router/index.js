@@ -15,10 +15,5 @@ export default new Router({
     path: '/city',
     name: 'City',
     component: City,
-    children:[{
-      path:"/data",
-      name:"Data",
-      component:City
-    }]
   }]
 })
