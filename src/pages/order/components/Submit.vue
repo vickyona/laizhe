@@ -2,7 +2,7 @@
 	<header class="footer">
  		<div class="price">
 			<em class="title">产品价格￥</em>
-			<span class="number">{{price}}</span>			 
+			<span class="number">{{PriceNum}}</span>			 
 		 </div>
  		<div class="submit">
  			提交订单
@@ -12,10 +12,16 @@
 
 <script>
 	export default{
-		data(){
-			return {
-				price:40
+		computed: {
+			PriceNum() {
+				if (!this.$store.state.order.totalPrice){
+					return 40
+				}else{
+					return this.$store.state.order.totalPrice
+				}
+				
 			}
+
 		}
 	}
 </script>

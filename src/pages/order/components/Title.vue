@@ -4,10 +4,10 @@
 			<h3 class="commodity">{{title}}</h3>
 			<div class="tag">
 				<p class="time">
-					<img src="../../assets/order/time.png" alt="" class="timeImg">{{time}}
+					<img src="../../../assets/order/time.png" alt="" class="timeImg">{{time}}
 				</p>
 				<ul v-for="item in info" :key="item" class="prompt"> 
-					<li class="promptList"><img src="../../assets/order/02.png" alt="" class="promptImg">{{item}}</li>
+					<li class="promptList"><img src="../../../assets/order/02.png" alt="" class="promptImg">{{item}}</li>
 				</ul>
 			</div>
 		</div>
@@ -46,7 +46,7 @@
 		justify-content: space-between;
 	}
 	#title .name{
-		width:5.4rem;
+		width:80%;
 	}
 	#title .commodity{
 		color: #212121;

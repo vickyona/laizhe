@@ -55,12 +55,14 @@
 				if(this.$refs.inputbox.value != 5){
 					this.$refs.inputbox.value = parseInt(this.$refs.inputbox.value) + 1;
 					this.listNum.push(parseInt(this.$refs.inputbox.value));
+					this.handleChangePrice()
 				}
 			},
 			handleReduce:function(){
 				if(this.$refs.inputbox.value != 1){
 					this.$refs.inputbox.value = parseInt(this.$refs.inputbox.value) - 1;
 					this.listNum.pop();
+					this.handleChangePrice()
 				}
 			},
 			numChange:function(){
@@ -69,14 +71,17 @@
 					if(!Number(inputNum)){
 						this.$refs.inputbox.value = 1;
 						this.listNum = [1];
+						this.handleChangePrice()
 
 					}else if(parseInt(inputNum) == 0){
 						this.$refs.inputbox.value = 1;
 						this.listNum = [1];
+						this.handleChangePrice()
 
 					}else if(parseInt(inputNum) > 5){
 						this.$refs.inputbox.value = 5;
 						this.listNum = [1,2,3,4,5];
+						this.handleChangePrice()
 
 					}else{
 						var ls = [];
@@ -84,6 +89,7 @@
 							ls.push(i);
 						}
 						this.listNum = ls;
+						this.handleChangePrice()
 					}
 				}
 				
@@ -92,8 +98,13 @@
 				if(this.$refs.inputbox.value == ''){
 					this.$refs.inputbox.value = 1;
 					this.listNum = [1];
+					this.handleChangePrice()
 				}
 
+			},
+			handleChangePrice:function(){
+				var totalNum = this.$refs.inputbox.value
+				this.$store.commit("changePrice", totalNum)
 			}
 		}
 	}
@@ -180,10 +191,10 @@
 	    line-height: .5rem;
 	}
 	.customer-inf label div{
-		width:5.32rem;
+		width:82%;
 	}
 	.customer-inf label div input{
-		width: 4rem;
+		width: 80%;
 	    height: .40rem;
 	    padding: .1rem 0;
 	    border: 0;
