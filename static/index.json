@@ -1,0 +1,35 @@
+{
+  "ret": true,
+  "data": {
+    "swiperInfo": [{
+      "id": 1,
+      "imgUrl": "http://img1.qunarzz.com/piao/fusion/1609/15/630b82d932a3c402.jpg_640x200_862e836b.jpg",
+      "link": "/list"
+    }, {
+      "id": 2,
+      "imgUrl": "http://img1.qunarzz.com/piao/fusion/1609/15/630b82d932a3c402.jpg_640x200_862e836b.jpg",
+      "link": "/list"
+    }],
+    "weekendInfo": [{
+      "id": 1,
+      "imgUrl": "http://img1.qunarzz.com/piao/fusion/1609/15/630b82d932a3c402.jpg_640x200_862e836b.jpg",
+      "link": "/weekend-detail"
+    }, {
+      "id": 2,
+      "imgUrl": "http://img1.qunarzz.com/sight/source/1505/9e/21df651e19af5d.jpg_r_640x214_3ea5bb38.jpg",
+      "link": "/weekend-detail"
+    }, {
+      "id": 3,
+      "imgUrl": "http://img1.qunarzz.com/sight/source/1505/aa/7baaf8a851d221.jpg_r_640x214_1431200f.jpg",
+      "link": "/weekend-detail"
+    }, {
+      "id": 4,
+      "imgUrl": "http://img1.qunarzz.com/sight/source/1509/81/0412da9c4db66a.jpg_r_640x214_8e23871e.jpg",
+      "link": "/weekend-detail"
+    }, {
+      "id": 5,
+      "imgUrl": "http://img1.qunarzz.com/sight/source/1509/28/1bb74b851279e6.jpg_r_640x214_64ebf0ee.jpg",
+      "link": "/weekend-detail"
+    }]
+  }
+}
