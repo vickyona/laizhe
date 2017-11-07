@@ -1,14 +1,14 @@
 <template>
  <swiper :options="swiperOption" id="swiper" ref="mySwiper">
       <swiper-slide>
-        <div v-for="(item,index) in imgs" v-if="index<8" :key="item.name">
-          <img :src="item.path" alt="">
+        <div v-for="(item,index) in iconSwiperInfo" v-if="index<8" :key="item.id">
+          <img :src="item.imgUrl" alt="">
           <p class="itemTitle">{{item.name}}</p>
         </div>
       </swiper-slide>
       <swiper-slide>
-        <div v-for="(item,index) in imgs" v-if="7 < index && index < 16" :key="item.name">
-          <img :src="item.path" alt="">
+        <div v-for="(item,index) in iconSwiperInfo" v-if="7 < index && index < 16" :key="item.id">
+          <img :src="item.imgUrl" alt="">
           <p class="itemTitle">{{item.name}}</p>
         </div>
       </swiper-slide>
@@ -19,6 +19,7 @@
 <script>
 import { swiper, swiperSlide } from "vue-awesome-swiper";
 export default {
+  props: ["iconSwiperInfo"],
   data() {
     return {
       swiperOption: {
