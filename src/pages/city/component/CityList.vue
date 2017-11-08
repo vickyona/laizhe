@@ -12,10 +12,10 @@ import ForeignComponent from "./CityList/Foreign";
 export default {
   computed: {
       show() {
-        if( this.$store.state.changeshow == "" ){
+        if( this.$store.state.city.changeshow == "" ){
           return 'domestic';
         }else{
-          return this.$store.state.changeshow
+          return this.$store.state.city.changeshow
         }
       }
   },

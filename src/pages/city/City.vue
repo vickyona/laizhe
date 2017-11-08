@@ -18,10 +18,9 @@ export default {
   },
   
   mounted() {
-  	if(!this.$store.state.length && !this.$store.state.length) {
+  	if(this.$store.getters.getDataSucc) {
   		this.$store.dispatch("getCityData");
   	}
-  	
   }
 };
 </script>

@@ -38,18 +38,19 @@
 </template>
 
 <script>
+import {mapState} from "vuex"
 export default {
-  computed: {
-  	positionCity() {
-  		return this.$store.state.domestic.positionCity;
-  	},
-    hotCity() {
-     	return this.$store.state.domestic.hotCity;
+  computed: mapState({
+    positionCity(state) {
+      return state.city.domestic.positionCity;
     },
-    cities() {
-    	return this.$store.state.domestic.cities;
+    hotCity(state) {
+      return state.city.domestic.hotCity;
+    },
+    cities(state) {
+      return state.city.domestic.cities;
     }
-  },
+  }),
   methods: {
     handleTouchstart: function(e) {
       var liElement = e.target;
