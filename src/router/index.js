@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/pages/home/Home'
-import Swiper from '@/pages/home/Swiper'
 import City from '@/pages/city/City'
 import Search from '@/pages/search/Search'
 import Order from '@/pages/order/Order'
@@ -25,3 +24,4 @@ export default new Router({
     component: Order,
   }]
 })
+

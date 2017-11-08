@@ -3,12 +3,12 @@
  		<div class="header-left">
 			 <i class="iconfont">&#xe705;</i>			 
 		 </div>
- 		<div class="header-title">
+ 		<a class="header-title" href="#/search">
 			 <i class="iconfont">&#xe6ae;</i>
  			输入城市/景点/游玩主题
- 		</div>
+ 		</a>
  		<div class="header-right">
- 			上海
+ 			北京
  		</div>
  	</header>
 </template>
@@ -17,7 +17,7 @@
 export default {};
 </script>
 
-<style>
+<style scoped>
 .header {
   position: relative;
   height: 0.88rem;
@@ -30,6 +30,7 @@ export default {};
 .header-left {
   float: left;
   width: 0.4rem;
+  height: .88rem;
   padding: 0 0.2rem;
   line-height: 0.88rem;
   font-size: 0.4rem;
@@ -48,7 +49,10 @@ export default {};
 }
 .header-right {
   float: right;
-  width: 1.28rem;
+  width: 1.08rem;
+  height: .88rem;
+  overflow: hidden;
+  padding-right: 0.2rem;
   line-height: 0.88rem;
   text-align: center;
   color: #fff;
