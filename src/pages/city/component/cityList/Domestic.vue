@@ -22,9 +22,9 @@
             </div> 
           </div>
       </div>
-      <div class="city-hot" v-for="(items, index) in cities" :id="index">
+      <div class="city-hot" v-for="(items, index) in cities" :id="index" :key="index">
           <div class="city-group-title">{{index}}</div>
-          <div class="city-center" v-for="item in items">
+          <div class="city-center" v-for="item in items" :key="item">
             <a href="" class="city-normal" >{{item}}</a>
           </div>
       </div>
