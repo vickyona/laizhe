@@ -1,25 +1,26 @@
 <template>
     <div id="hotPlace">
         <div class="hot-place-title">热销推荐</div>
-        <div id="hot-place-stage" v-for="item in hotPlaceInfo" :key="item.name">
-            <img :src="item.imgUrl" class="hotPlace-img" :alt="item.name">
-            <div id="hot-place-content">
-                <span class="hotPlace-name">{{item.name}}</span>
-                <span class="hotPlace-slogan">{{item.slogan}}</span>
-                <span class="hotPlace-price">¥<b>{{item.price}}</b><span>起</span></span>
-            </div>
-        </div>
+        <router-link to="/detail">
+          <div id="hot-place-stage" v-for="item in hotPlaceInfo" :key="item.name">
+              <img :src="item.imgUrl" class="hotPlace-img" :alt="item.name">
+              <div id="hot-place-content">
+                  <span class="hotPlace-name">{{item.name}}</span>
+                  <span class="hotPlace-slogan">{{item.slogan}}</span>
+                  <span class="hotPlace-price">¥<b>{{item.price}}</b><span>起</span></span>
+              </div>
+          </div>
+        </router-link>
         <div class="hot-more">查看所有产品</div>
     </div>
 </template>
 <script>
 export default {
-  computed:{
-    hotPlaceInfo(){
+  computed: {
+    hotPlaceInfo() {
       return this.$store.state.home.hotPlaceInfo;
     }
   }
-  
 };
 </script>
 <style>
@@ -42,7 +43,9 @@ export default {
   float: left;
   width: 1.4rem;
 }
-.hotPlace-name,.hotPlace-slogan,.hotPlace-price{
+.hotPlace-name,
+.hotPlace-slogan,
+.hotPlace-price {
   display: block;
   width: 4rem;
   overflow: hidden;
@@ -73,7 +76,7 @@ export default {
   margin-left: 1.6rem;
   color: #ff8300;
 }
-#hot-place-content .hotPlace-price  b {
+#hot-place-content .hotPlace-price b {
   font-size: 0.36rem;
   padding: 0.04rem;
 }

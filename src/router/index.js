@@ -4,6 +4,7 @@ import Home from '@/pages/home/Home'
 import City from '@/pages/city/City'
 import Search from '@/pages/search/Search'
 import Order from '@/pages/order/Order'
+import Detail from '@/pages/detail/Detail'
 
 Vue.use(Router)
 export default new Router({
@@ -23,5 +24,9 @@ export default new Router({
     path: '/order',
     name: 'Order',
     component: Order,
+  }, {
+    path: '/detail',
+    name: 'detail',
+    component: Detail
   }]
 })
