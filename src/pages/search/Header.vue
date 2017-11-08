@@ -1,6 +1,6 @@
 <template>
     <header class="header">
-        <a class="iconfont header-left" href="#/">&#xe705;</a>    
+        <router-link class="iconfont header-left" to='/'>&#xe705;</router-link>
         <h1 class="header-title">
             <input type="text" class="search-input" placeholder="输入城市或景点">    
         </h1>
