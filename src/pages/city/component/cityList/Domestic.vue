@@ -66,16 +66,20 @@ export default {
         arr.push(i);
       }
       const positionElement = document.getElementById(arr[touchedCitysNum]);
-      document.documentElement.scrollTop = positionElement.offsetTop - 44;
+      var top = positionElement.offsetTop - 44;
+      document.body && document.body.scrollTop
+        ? (document.body.scrollTop = top)
+        : (document.documentElement.scrollTop = top);
       e.preventDefault();
     },
     handleTouchstart(e) {
       var liElement = e.target;
       var text = liElement.innerHTML;
       var positionElement = document.getElementById(text);
-      if (positionElement) {
-        document.documentElement.scrollTop = positionElement.offsetTop - 44;
-      }
+      var top = positionElement.offsetTop - 44;
+      document.body && document.body.scrollTop
+        ? (document.body.scrollTop = top)
+        : (document.documentElement.scrollTop = top);
     }
   }
 };
