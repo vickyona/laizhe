@@ -9,7 +9,7 @@
 				<span class="reduce" @click="handleReduce">
 					<span></span>
 				</span>
-				<input type="text" :max="num" min="1" value=1 ref="inputbox">
+				<input type="text" value=1 ref="inputbox" @input="numChange" @blur="InputBlur">
 				<span class="add" @click="handleAdd">
 					<span class="line"></span>
 					<span class="vertical-line"></span>
@@ -55,13 +55,56 @@
 				if(this.$refs.inputbox.value != 5){
 					this.$refs.inputbox.value = parseInt(this.$refs.inputbox.value) + 1;
 					this.listNum.push(parseInt(this.$refs.inputbox.value));
+					this.handleChangePrice()
 				}
 			},
 			handleReduce:function(){
 				if(this.$refs.inputbox.value != 1){
 					this.$refs.inputbox.value = parseInt(this.$refs.inputbox.value) - 1;
-					this.listNum.pop()
+					this.listNum.pop();
+					this.handleChangePrice()
 				}
+			},
+			numChange:function(){
+				var inputNum = this.$refs.inputbox.value;
+				if(inputNum != ''){
+					if(!Number(inputNum)){
+						this.$refs.inputbox.value = 1;
+						this.listNum = [1];
+						this.handleChangePrice()
+
+					}else if(parseInt(inputNum) == 0){
+						this.$refs.inputbox.value = 1;
+						this.listNum = [1];
+						this.handleChangePrice()
+
+					}else if(parseInt(inputNum) > 5){
+						this.$refs.inputbox.value = 5;
+						this.listNum = [1,2,3,4,5];
+						this.handleChangePrice()
+
+					}else{
+						var ls = [];
+						for(var i = 1 ; i < parseInt(inputNum) + 1 ; i++){
+							ls.push(i);
+						}
+						this.listNum = ls;
+						this.handleChangePrice()
+					}
+				}
+				
+			},
+			InputBlur:function(){
+				if(this.$refs.inputbox.value == ''){
+					this.$refs.inputbox.value = 1;
+					this.listNum = [1];
+					this.handleChangePrice()
+				}
+
+			},
+			handleChangePrice:function(){
+				var totalNum = this.$refs.inputbox.value
+				this.$store.commit("changePrice", totalNum)
 			}
 		}
 	}
@@ -148,10 +191,10 @@
 	    line-height: .5rem;
 	}
 	.customer-inf label div{
-		width:5.32rem;
+		width:82%;
 	}
 	.customer-inf label div input{
-		width: 4rem;
+		width: 80%;
 	    height: .40rem;
 	    padding: .1rem 0;
 	    border: 0;

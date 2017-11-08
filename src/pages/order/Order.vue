@@ -7,9 +7,9 @@
 </template>
 
 <script>
-	import Header from "./Header.vue";
-	import OrderForm from "./OrderForm.vue";
-	import Submit from "./Submit.vue";
+	import Header from "./components/Header.vue";
+	import OrderForm from "./components/OrderForm.vue";
+	import Submit from "./components/Submit.vue";
 	export default{
 		components:{
 			"order-Header":Header,
