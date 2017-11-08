@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<search-header></search-header>
-		<blank-suggest></blank-suggest>
+		<search-suggest></search-suggest>
 	</div>
 </template>
 
@@ -11,7 +11,7 @@
 	export default{
 		components:{
 			"search-header":HeaderComponent,
-			"blank-suggest":SuggestComponent
+			"search-suggest":SuggestComponent
 		}
 	}
 </script>

@@ -1,5 +1,5 @@
 <template>
-	<div id="blank-suggest" class="suggest">
+	<div id="search-suggest" class="suggest">
 		<div class="suggest-list">
 			<div class="history-head"></div>
 			<div class="history-counter"></div>

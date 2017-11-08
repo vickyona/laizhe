@@ -1,8 +1,8 @@
 <template>
     <div id="hotPlace">
         <div class="hot-place-title">热销推荐</div>
-        <div id="hot-place-stage" v-for="item in hotInfo" :key="item.name">
-            <img :src="item.path" alt="" class="hotPlace-img">
+        <div id="hot-place-stage" v-for="item in hotPlaceInfo" :key="item.name">
+            <img :src="item.imgUrl" class="hotPlace-img" :alt="item.name">
             <div id="hot-place-content">
                 <span class="hotPlace-name">{{item.name}}</span>
                 <span class="hotPlace-slogan">{{item.slogan}}</span>
@@ -13,10 +13,17 @@
     </div>
 </template>
 <script>
-export default {};
+export default {
+  computed:{
+    hotPlaceInfo(){
+      return this.$store.state.home.hotPlaceInfo;
+    }
+  }
+  
+};
 </script>
 <style>
-.hot-title {
+.hot-place-title {
   clear: both;
   width: 2rem;
   height: 0.8rem;
@@ -31,11 +38,11 @@ export default {};
   padding: 0.24rem;
   border-bottom: 1px solid #f4f4f4;
 }
-#hot-place-stage > .hotPlace-imgmg {
+#hot-place-stage .hotPlace-img {
   float: left;
   width: 1.4rem;
 }
-#hot-place-content > span {
+.hotPlace-name,.hotPlace-slogan,.hotPlace-price{
   display: block;
   width: 4rem;
   overflow: hidden;
@@ -44,7 +51,7 @@ export default {};
   margin-left: 1.6rem;
   padding: 0.04rem;
 }
-#hot-place-content > .hotPlace-name {
+#hot-place-content .hotPlace-name {
   overflow: hidden;
   margin-top: 0.04rem;
   margin-bottom: 0.1rem;
@@ -53,7 +60,7 @@ export default {};
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-#hot-place-content > .hotPlace-slogan {
+#hot-place-content .hotPlace-slogan {
   height: 0.4rem;
   overflow: hidden;
   margin-bottom: 0.1rem;
@@ -62,15 +69,15 @@ export default {};
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-#hot-place-content > .hotPlace-price {
+#hot-place-content .hotPlace-price {
   margin-left: 1.6rem;
   color: #ff8300;
 }
-#hot-place-content > .hotPlace-price > b {
+#hot-place-content .hotPlace-price  b {
   font-size: 0.36rem;
   padding: 0.04rem;
 }
-#hot-place-content > .hotPlace-price > span {
+#hot-place-content .hotPlace-price span {
   color: #9e9e9e;
   font-size: 0.24rem;
 }

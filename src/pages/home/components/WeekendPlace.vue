@@ -18,7 +18,11 @@
 </template>
 <script>
 export default {
-  props: ["weekendPlaceInfo"]
+    computed:{
+        weekendPlaceInfo(){
+            return this.$store.state.home.weekendPlaceInfo;
+        }
+    }
 };
 </script>
 <style>

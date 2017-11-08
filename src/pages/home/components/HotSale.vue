@@ -1,18 +1,18 @@
 <template>
     <div id="onSale">
-        <div id="onSale-stage1">
-            <div class="onSale-stage1-left">
+        <div id="onSale-stageTop">
+            <div class="onSale-stageTop-left">
                 <i class="iconfont">&#xe611;</i>
-                <p >定位失败</p>
+                <p class="onSale-stageTop-describe">定位失败</p>
             </div>
-            <div class="onSale-stage1-right">
+            <div class="onSale-stageTop-right">
                 <i class="iconfont">&#xe64c;</i>
-                <p>5折泡温泉</p>                
+                <p class="onSale-stageTop-describe">5折泡温泉</p>                
             </div>
         </div>
-        <div id="onSale-stage2">
-            <div></div>
-            <div></div>
+        <div id="onSale-stageBottom">
+            <div class="onSale-stageBottom-left"></div>
+            <div class="onSale-stageBottom-right"></div>
         </div>
         <div id="fixed"></div>
     </div>
@@ -21,51 +21,51 @@
 export default {};
 </script>
 <style>
-#onSale-stage1 {
+#onSale-stageTop {
   height: 0.95rem;
   display: flex;
   background: #fff;
 }
-#onSale-stage1 > div {
+.onSale-stageTop-left,.onSale-stageTop-right{
   display: flex;
   justify-content: center;
   align-items: center;
   width: 50%;
   box-shadow: border-box;
 }
-#onSale-stage1 > div:nth-child(1) {
+.onSale-stageTop-left{
   border-top: 1px solid #f4f4f4;
   border-right: 1px solid #f4f4f4;
 }
-#onSale-stage1 > div:nth-child(2) {
+.onSale-stageTop-right{
   border-top: 1px solid #f4f4f4;
 }
-#onSale-stage1 > div > p {
+#onSale-stageTop .onSale-stageTop-describe{
   width: 40%;
   height: 0.28rem;
   overflow: hidden;
   margin-left: 0.04rem;
 }
-#stage2 {
+#onSale-stageBottom {
   height: 1.4rem;
   width: 100%;
   margin-top: 0.2rem;
   display: flex;
 }
-#stage2 > div {
+.onSale-stageBottom-left,.onSale-stageBottom-right{
   height: 100%;
   box-sizing: border-box;
   width: 50%;
 }
-#stage2 > div:nth-child(1) {
-  background: url(../../../assets/sale/sale1.png)no-repeat #fff;
+.onSale-stageBottom-left{
+   background: #fff url(http://img1.qunarzz.com/piao/fusion/1710/a2/e395615b16fb1302.png) no-repeat;
   background-position: center;
   background-size: auto 100%;
   border: 1px solid #f4f4f4;
   border-left: none;
 }
-#stage2 > div:nth-child(2) {
-  background: url(../../../assets/sale/sale2.png)no-repeat #fff;
+.onSale-stageBottom-right{
+  background: #fff url(http://img1.qunarzz.com/piao/fusion/1710/54/1685d2108b652302.png) no-repeat;
   background-position: center;
   background-size: auto 100%;
   border-top: 1px solid #f4f4f4;
