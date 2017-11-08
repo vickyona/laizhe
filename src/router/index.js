@@ -4,7 +4,6 @@ import Home from '@/pages/home/Home'
 import City from '@/pages/city/City'
 import Search from '@/pages/search/Search'
 import Order from '@/pages/order/Order'
-import City from '@/pages/city/City'
 
 Vue.use(Router)
 export default new Router({

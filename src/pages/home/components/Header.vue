@@ -7,9 +7,11 @@
   			 <i class="iconfont">&#xe6ae;</i>
    			输入城市/景点/游玩主题
    		</router-link>
- 		<div class="header-right">
- 			北京
- 		</div>
+      <router-link to='/city'>
+         <div class="header-right">
+            北京
+         </div>
+      </router-link>
  	</header>
 </template>
 
@@ -30,7 +32,7 @@ export default {};
 .header-left {
   float: left;
   width: 0.4rem;
-  height: .88rem;
+  height: 0.88rem;
   padding: 0 0.2rem;
   line-height: 0.88rem;
   font-size: 0.4rem;
@@ -50,7 +52,7 @@ export default {};
 .header-right {
   float: right;
   width: 1.08rem;
-  height: .88rem;
+  height: 0.88rem;
   overflow: hidden;
   padding-right: 0.2rem;
   line-height: 0.88rem;

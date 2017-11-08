@@ -23,9 +23,9 @@
             </div> 
           </div>
       </div>
-      <div class="city-hot" v-for="(items, index) in cities" v-bind:id="index">
+      <div class="city-hot" v-for="(items, index) in cities" :id="index" :key="index">
           <div class="city-group-title">{{index}}</div>
-          <div class="city-center" v-for="item in items">
+          <div class="city-center" v-for="item in items" :key="item">
             <a href="" class="city-normal">{{item}}</a>
           </div>
       </div>
@@ -40,6 +40,11 @@
 <script>
 import { mapState } from "vuex";
 export default {
+  data() {
+    return {
+      cityList: []
+    };
+  },
   computed: mapState({
     positionCity(state) {
       return state.city.foreign.positionCity;
@@ -52,26 +57,30 @@ export default {
     }
   }),
   methods: {
-    handleTouchstart: function(e) {
-      var liElement = e.target;
-      var text = liElement.innerHTML;
-      var positionElement = document.getElementById(text);
-
-      if (positionElement) {
-        document.documentElement.scrollTop = positionElement.offsetTop - 44;
-      }
-    },
     handleTouchmove(e) {
       e = event || window.event;
-      let touchedCitysNum =
+      const touchedCitysNum =
         ((e.changedTouches[0].clientY - 108) / 16).toFixed(0) - 1;
       var arr = [];
       for (let i in this.cityList) {
         arr.push(i);
       }
-      let positionElement = document.getElementById(arr[touchedCitysNum]);
-      document.documentElement.scrollTop = positionElement.offsetTop - 44;
+      const positionElement = document.getElementById(arr[touchedCitysNum]);
+      console.log(arr, positionElement, arr[touchedCitysNum]);
+      var top = positionElement.offsetTop - 44;
+      document.body && document.body.scrollTop
+        ? (document.body.scrollTop = top)
+        : (document.documentElement.scrollTop = top);
       e.preventDefault();
+    },
+    handleTouchstart(e) {
+      var liElement = e.target;
+      var text = liElement.innerHTML;
+      var positionElement = document.getElementById(text);
+      var top = positionElement.offsetTop - 44;
+      document.body && document.body.scrollTop
+        ? (document.body.scrollTop = top)
+        : (document.documentElement.scrollTop = top);
     }
   }
 };
