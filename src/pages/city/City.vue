@@ -6,6 +6,7 @@
 </template>
 
 <script>
+
 import CityHeaderComponent from "./component/CityHeader";
 import CityListComponent from "./component/CityList";
 
