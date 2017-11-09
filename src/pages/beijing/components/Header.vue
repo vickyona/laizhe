@@ -1,15 +1,17 @@
 <template>
- 	<header class="header">
- 		<div class="header-left">
-			 <i class="iconfont">&#xe705;</i>			 
-		 </div>
+ 	<div class="header">
+    <router-link to="/">
+        <div class="header-left">
+          <i class="iconfont">&#xe705;</i>			 
+        </div>
+    </router-link>
  		<div class="header-title">
  			输入城市或景点
  		</div>
  		<div class="header-right">
  			搜索
  		</div>
- 	</header>
+ 	</div>
 </template>
 
 <script>
@@ -52,6 +54,5 @@ export default {};
   text-align: center;
   color: #fff;
 }
-
 </style>
 
