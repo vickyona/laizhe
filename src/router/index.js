@@ -6,6 +6,7 @@ import Search from '@/pages/search/Search'
 import Order from '@/pages/order/Order'
 import Detail from '@/pages/detail/Detail'
 
+import Beijing from '@/pages/beijing/Beijing'
 Vue.use(Router)
 export default new Router({
   routes: [{
@@ -28,5 +29,9 @@ export default new Router({
     path: '/detail',
     name: 'detail',
     component: Detail
+  }, {
+    path: '/beijing',
+    name: 'Beijing',
+    component: Beijing,
   }]
 })
