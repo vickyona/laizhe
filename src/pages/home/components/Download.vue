@@ -1,5 +1,5 @@
 <template>
-    <div class="download" v-if="show" @touchmove="handleNomoveTouchmove">
+    <div class="download"v-if="visited" @touchmove="handleNomoveTouchmove">
         <div class="download-mask"></div>
         <div class="download-board">
             <img src="../../../assets/home/downloadbg.png" alt="" class="download-bg">
@@ -9,13 +9,19 @@
     </div>
 </template>
 <script>
+import { mapState } from "vuex";
+
 export default {
   data() {
     return {
-      show: true,
       osType: ""
     };
   },
+  computed: mapState({
+    visited(state) {
+      return state.home.visitedIndex;
+    }
+  }),
   mounted(e) {
     var whatOsType = /Google/;
     whatOsType.test(navigator.vendor)
@@ -24,11 +30,11 @@ export default {
   },
   methods: {
     handleExitTouchstart() {
-      this.show = false;
+      this.$store.state.home.visitedIndex = false;
     },
     handleDownloadTouchstart() {
       alert("无法下载😁😁😁");
-      this.show = false;
+      this.$store.state.home.visitedIndex = false;
     },
     handleNomoveTouchmove(e) {
       e.preventDefault();
