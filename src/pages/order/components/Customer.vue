@@ -7,9 +7,9 @@
 			</div>
 			<div class="number">
 				<span class="reduce" @click="handleReduce">
-					<span></span>
+					<span class="reduceLine"></span>
 				</span>
-				<input type="text" value=1 ref="inputbox" @input="numChange" @blur="InputBlur">
+				<input type="text" class="inputNum" value=1 ref="inputbox" @input="numChange" @blur="InputBlur">
 				<span class="add" @click="handleAdd">
 					<span class="line"></span>
 					<span class="vertical-line"></span>
@@ -17,24 +17,24 @@
 			</div>
 		</div>
 		<div class="customer-inf" v-for="item in listNum">
-			<label for="">
-				<p>游客<span>{{item}}</span></p>
-				<div class="customer-name">
-					<input type="text" placeholder="游客姓名">
-					<i class="iconfont">&#xe612;</i>
+			<label for="" class="labelbox">
+				<p class="labelText">游客<span>{{item}}</span></p>
+				<div class="customer-name contenter">
+					<input type="text" placeholder="游客姓名" class="inputbox">
+					<i class="iconfont ico">&#xe612;</i>
 				</div>
 			</label>
-			<label for="">
-				<p>手机号</p>
-				<div>
-					<span class="area-code">+86 <em>|</em></span>
-					<input type="text" placeholder="请填写手机号">
+			<label for="" class="labelbox">
+				<p class="labelText">手机号</p>
+				<div class="contenter">
+					<span class="area-code">+86 <em class="codeLine">|</em></span>
+					<input type="text" placeholder="请填写手机号" class="inputbox">
 				</div>
 			</label>
-			<label for="">
-				<p>身份证</p>
-				<div>
-					<input type="text" placeholder="请填写正确的身份证号码">
+			<label for="" class="labelbox">
+				<p class="labelText">身份证</p>
+				<div class="contenter">
+					<input type="text" placeholder="请填写正确的身份证号码" class="inputbox">
 				</div>
 			</label>
 		</div>
@@ -118,27 +118,27 @@
 		display: flex;
 		justify-content: space-between;
 	}
-	#customer .num .content{
+	#customer .content{
 		display: flex;
 	}
-	#customer .num .text{
+	#customer .text{
 		color: #616161;
 	    font-size: .3rem;
 	    line-height: .5rem;
 	    padding-right: .15rem
 	}
-	#customer .num .warm{
+	#customer .warm{
 		color: #ccc;
 	    font-size: .28rem;
 	    line-height: .5rem;
 	}
-	#customer .num .number{
+	#customer .number{
 		border: .02rem solid #c7ced4;
 		width:1.96rem;
 		display: flex;
 		justify-content: space-between;
 	}
-	#customer .num .number input{
+	#customer .inputNum{
 		border:0;
 		width: .6rem;
 	    height: .6rem;
@@ -146,7 +146,7 @@
 	    text-align: center;
 	    padding: 0 .06rem;
 	}
-	#customer .num .number .add,#customer .num .number .reduce{
+	#customer .add,#customer .reduce{
 		height:.6rem;
 		background: #00afc7;
 		width: .56rem;
@@ -154,7 +154,7 @@
 	    margin: .02rem;
 	    position: relative;
 	}
-	#customer .num .number .reduce span,#customer .num .number .add .line{
+	#customer .reduceLine,#customer .line{
 		width: .3rem;
     	height: .06rem;
     	background: #fff;
@@ -163,7 +163,7 @@
     	top: .26rem;
     	left: .12rem;
 	}
-	#customer .num .number .add .vertical-line{
+	#customer .vertical-line{
 		top: .15rem;
 	    left: .24rem;
 	    width: .06rem;
@@ -176,7 +176,7 @@
 		background: #fff;
 		margin-bottom: .2rem;
 	}
-	.customer-inf label{
+	.customer-inf .labelbox{
 		display: flex;
 		justify-content: space-between;
 		overflow: hidden;
@@ -184,31 +184,31 @@
 	    padding: .24rem;
 	    border:.02rem solid #f5f5f5;
 	}
-	.customer-inf label p{
+	.customer-inf .labelText{
 		width:1.5rem;
 		color: #616161;
 	    font-size: .3rem;
 	    line-height: .5rem;
 	}
-	.customer-inf label div{
+	.customer-inf .contenter{
 		width:82%;
 	}
-	.customer-inf label div input{
+	.customer-inf .inputbox{
 		width: 80%;
-	    height: .40rem;
+	    height: .60rem;
 	    padding: .1rem 0;
 	    border: 0;
 	    font: normal .32rem/.38rem Arial,"Microsoft Yahei","Helvetica Neue",Helvetica,sans-serif;
 	    color: #212121;
 	}
-	.customer-inf label .customer-name{
+	.customer-inf .customer-name{
 		display: flex;
 		justify-content: space-between;
 	}
-	.customer-inf label i{
+	.customer-inf .ico{
 		font-size:.4rem;
 	}
-	.customer-inf label div .area-code{
+	.customer-inf .area-code{
 		border: .02rem solid #ccc;
 	    color: #888;
 	    font-size: .28rem;
@@ -220,7 +220,7 @@
     	min-width: .4rem;
     	max-width: 1rem;
 	}
-	.customer-inf label div .area-code em{
+	.customer-inf .codeLine{
 		 font-size: .18rem;
 		 line-height: .7rem;
 		 font-style: normal;
