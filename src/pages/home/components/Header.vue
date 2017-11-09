@@ -8,15 +8,21 @@
    			输入城市/景点/游玩主题
    		</router-link>
       <router-link to='/city'>
-         <div class="header-right">
-            北京
+         <div class="header-right" v-html="currentCity">
          </div>
       </router-link>
  	</header>
 </template>
 
 <script>
-export default {};
+import { mapState } from "vuex";
+export default {
+  computed: mapState({
+    currentCity() {
+      return this.$store.state.city.currentCity;
+    }
+  }),
+};
 </script>
 
 <style scoped>

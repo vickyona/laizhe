@@ -1,9 +1,14 @@
 import axios from "axios"
 export default {
 	state: {
-      domestic: [],
-      foreign: [],
-      changeshow:""
+		DompositionCity: [],
+		DomhotCity: [],
+		Domcities: [],
+		ForpositionCity: [],
+		ForhotCity: [],
+		Forcities: [],
+		changeshow: "",
+		currentCity: "北京",
 	},
 	actions: {
 		getCityData: function(context) {
@@ -18,16 +23,29 @@ export default {
 	},
 	mutations: {
 		changeinternalCity(state, data) {
-			state.domestic = data.domestic;
-			state.foreign = data.foreign;
+			state.DompositionCity = data.domestic.positionCity;
+			state.DomhotCity = data.domestic.hotCity;
+			state.Domcities = data.domestic.cities;
+			state.ForpositionCity = data.foreign.positionCity;
+			state.ForhotCity = data.foreign.hotCity;
+			state.Forcities = data.foreign.cities;
+
 		},
 		changeShow(state, data) {
 			state.changeshow = data;
+		},
+		currentCity(state, data) {
+			state.currentCity = data;
 		}
 	},
 	getters: {
 		getDataSucc(state) {
-			if(!state.domestic.length && !state.foreign.length){
+			if(!state.DompositionCity.length && 
+				!state.DomhotCity.length && 
+				!state.Domcities.length && 
+				!state.ForpositionCity.length && 
+				!state.ForhotCity.length && 
+				!state.Forcities.length){
 				return true;
 			}else{
 				return false;
