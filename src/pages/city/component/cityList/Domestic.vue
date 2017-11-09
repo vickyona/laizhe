@@ -18,14 +18,14 @@
           <div class="city-group-now">
             <div class="city-light" v-for="item in hotCity" 
             :key="item">
-              <a href="" class="city-name ">{{item}}</a>
+              <a href="javascript:history.back(-1)" class="city-name" @touchend ="handleCurrentCityTouchend">{{item}}</a>
             </div> 
           </div>
       </div>
       <div class="city-hot" v-for="(items, index) in cities" :id="index" :key="index">
           <div class="city-group-title">{{index}}</div>
           <div class="city-center" v-for="item in items" :key="item">
-            <a href="" class="city-normal" >{{item}}</a>
+            <a href="javascript:history.back(-1)" class="city-normal" @touchend ="handleCurrentCityTouchend">{{item}}</a>
           </div>
       </div>
     </div>
@@ -46,14 +46,14 @@ export default {
   },
   computed: mapState({
     positionCity(state) {
-      return state.city.domestic.positionCity;
+      return state.city.DompositionCity;
     },
     hotCity(state) {
-      return state.city.domestic.hotCity;
+      return state.city.DomhotCity;
     },
     cities(state) {
-      this.cityList = state.city.domestic.cities;
-      return state.city.domestic.cities;
+      this.cityList = state.city.Domcities;
+      return state.city.Domcities;
     }
   }),
   methods: {
@@ -80,6 +80,11 @@ export default {
       document.body && document.body.scrollTop
         ? (document.body.scrollTop = top)
         : (document.documentElement.scrollTop = top);
+    },
+    handleCurrentCityTouchend: function(e) {
+      var currentCity = e.target.innerHTML;
+      this.$store.commit("currentCity", currentCity);
+
     }
   }
 };
