@@ -6,6 +6,7 @@
      <index-hotSale></index-hotSale>
      <index-hotPlace></index-hotPlace>
      <index-weekendPlace></index-weekendPlace>
+     <index-download></index-download>
  	</div>
 </template>
 
@@ -16,6 +17,7 @@ import IconSwiper from "./components/IconSwiper";
 import HotSale from "./components/HotSale";
 import HotPlace from "./components/HotPlace";
 import WeekendPlace from "./components/WeekendPlace";
+import Download from "./components/Download";
 export default {
   components: {
     "index-hearder": Header,
@@ -23,7 +25,8 @@ export default {
     "index-iconSwiper": IconSwiper,
     "index-hotSale": HotSale,
     "index-hotPlace": HotPlace,
-    "index-weekendPlace": WeekendPlace
+    "index-weekendPlace": WeekendPlace,
+    "index-download": Download
   },
   mounted() {
     if (this.$store.getters.shouldGetHomeData) {
