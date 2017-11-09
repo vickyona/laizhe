@@ -1,6 +1,10 @@
 <template>
-    <div class="list-sight" >
-       <div class="list-sight-info" v-for="item in lists" :key="item.id">
+
+<div id="wrapper">
+	<div id="scroller">
+    <ul id="list-sight">
+       <div id="loadNotice" v-if="showLoading">loading...</div>
+       <li class="list-sight-info" v-for="item in lists" :key="item.id">
             <div class="list-sight-imgcon">
                <img :src ="item.path" class="list-sight-img">
             </div>
@@ -38,31 +42,72 @@
                 <em>{{item.qunarprice2}}</em>
             </span>
         </div>
-       </div>
-        
+       </li>
+     </ul>   
     </div>
+    </div>
+
 </template>
 
 <script>
-export default {
-    props:["lists"],
+
+    require("../../../utils/iscroll-probe.js")
+   
+
+    export default {
     data(){
         return{
-            
+            showLoading:false
         }
+    },
+    computed:{
+        lists(){
+            return this.$store.state.lists;
+        }
+    },
+    mounted(){
+        this.flag =false;
+        this.myScroll =new IScroll('#wrapper',{probeType:2,mouseWheel:true});
+        this.myScroll.on("scroll", () => {
+            if(this.myScroll.y>50){
+                this.flag = true;
+                this.$store.commit("lists")
+                this.showLoading =true;
+            }
+        })
+    },
+    updated(){
+        setTimeout(()=>{
+            this.showLoading =false;
+            this.myScroll.refresh();
+        },500)
+        
     }
   
-};
+}
 </script>
 
 <style>
 body{
     margin:0;
     padding:0;
+    position:relative;
 
 }
 html{
     font-size:50px;
+}
+#wrapper{
+    position:absolute;
+    width:100%;
+    height:500px;
+    top:1.68rem;
+    overflow:hidden;
+}
+#loadNotice{
+    text-align:center;
+    font-size:16px;
+    font-color:#444;
 }
 .list-sight-info{
     padding: .2rem;

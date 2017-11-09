@@ -1,57 +1,52 @@
 <template>
 	<div>
 		<beijing-header/>
-        <Classify-contend></Classify-contend>
-				<List-contend :lists="lists"></List-contend >
+        <Sort-contend :categories="categories"></Sort-contend>
+				<List-contend ></List-contend >
 	</div>
 </template>
 
 <script>
 import HeaderComponent from "./components/Header";
-import ClassifyComponent from "./components/Classify";
+import SortComponent from "./components/Sort";
 import ListComponent from "./components/List";
 import axios from "axios";
 
-
-
-
-
 export default {
 	data(){
-		return{
-			lists:[]
+		return {
+			categories:[]
 		}
+
 	},
+	methods:{
+		getCategoriesData(){
+            axios.get("/static/categories.json")
+                 .then(this.handleGetDataSucc.bind(this))
+                 .catch(this.handleGetDataErr.bind(this))
+        },
+        handleGetDataSucc(response){
+					console.log(response)
+            if(response.status==200){
+          this.categories=response.data.data.categories
+            }
+            
+        },
+        handleGetDataErr(){
+
+        }
+
+	},
+
   components: {
 	"beijing-header": HeaderComponent,
-	"Classify-contend": ClassifyComponent,
+	"Sort-contend": SortComponent,
 	"List-contend": ListComponent
-	
-    
-  },
-	methods:{
-		getBeijingData(){
-			    axios.get('/static/beijing.json')
-					.then(this.handleGetDataSucc.bind(this))
-					.catch(this.handleGetDataErr.bind(this))
-		},
-		handleGetDataSucc:function(response){
-       if(response.status ==200){
-				 const {data} =response.data;
-				 this.lists=data.lists;
-
-			 }
-		},
-		handleGetDataErr:function(error){
-       console.log(error)
-		}
-
-
 	},
 	mounted(){
-		this.getBeijingData();
-
-	}
+		this.$store.dispatch("getlists");
+		this.getCategoriesData();
+  }
 };
 </script>
 
