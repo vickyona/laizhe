@@ -5,8 +5,8 @@
 		</div>
  		<div class="city-header-right">
       <h1 class="city-header-title">
-        <p class="header-city" :class="{'city-clickStyle': isActive}"  v-on:touchstart="internalClick">国内</p>
-        <p class="header-city" :class="{'city-clickStyle': !isActive}" v-on:touchstart="foreignClick">国外</p>
+        <p class="header-city" :class="{'city-clickStyle': isActive}"  v-on:touchstart="internalTouchstart">国内</p>
+        <p class="header-city" :class="{'city-clickStyle': !isActive}" v-on:touchstart="foreignTouchstart">国外</p>
       </h1>
     </div>
  	</header>
@@ -22,11 +22,11 @@ export default {
 
   },
   methods: {
-    internalClick: function(e) {
+    internalTouchstart: function(e) {
       this.$store.commit("changeShow", "domestic");
       this.isActive = true;
     },
-    foreignClick: function() {
+    foreignTouchstart: function() {
       this.$store.commit("changeShow", "foreign");
       this.isActive = false;
     },
