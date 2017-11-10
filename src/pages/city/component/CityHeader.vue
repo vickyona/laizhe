@@ -36,6 +36,7 @@ export default {
 </script>
 
 <style>
+
 .city-header {
   position: fixed;
   top: 0;
