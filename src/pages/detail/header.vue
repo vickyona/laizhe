@@ -1,7 +1,7 @@
 <template>
 	<div>
         <div class='ticket-header' @scroll="heightScroll()" v-show="header" :style="{ opacity : opacity}">
-            <router-link to="/"><a class='ticket-header-goback iconfont'>&#xe615;</a></router-link>
+            <router-link to="/"><a class='ticket-header-goback iconfont'>&#xe705;</a></router-link>
             <h1 class='ticket-header-title'>广州长隆旅游度假区</h1>
         </div>
         <router-link to="/beijing">

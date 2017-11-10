@@ -30,13 +30,18 @@ export default {
     swiper,
     swiperSlide
   },
-  computed:{
-    swiperInfo(){
-      return this.$store.state.home.swiperInfo
+  computed: {
+    swiperInfo() {
+      return this.$store.state.home.swiperInfo;
     }
   }
 };
 </script>
+<style>
+.swiper-pagination-bullet {
+  background: #00bcd4;
+}
+</style>
 
 <style scoped>
 /* .con {

@@ -4,7 +4,9 @@
         <div class="download-board">
             <img src="../../../assets/home/downloadbg.png" alt="" class="download-bg">
             <div class="download-exit" @touchstart="handleExitTouchstart"></div>
-            <div class="download-btn" @touchstart="handleDownloadTouchstart">下载{{osType}}客户端</div>
+            <div class="download-btn" @touchstart="handleDownloadTouchstart">
+                <i class="iconfont">&#xe637;</i>
+                下载{{osType}}客户端</div>
         </div>
     </div>
 </template>
@@ -100,6 +102,9 @@ export default {
   border-radius: 5px;
   bottom: 30px;
   bottom: 10%;
+}
+.iconfont {
+  font-size: 24px;
 }
 </style>
 

@@ -19,9 +19,9 @@
                 <iscroll-view class="scroll-view" id="iscrollB"> 
                     <div class="menu-inner">
                         <div class="menu-item menu-item-bottom" ref="itemcolor":class='{ "checked":check[index]}' @touchstart="handleTouchstart(index)"  v-for="(item, index) in categories" :key="item.id">
-                                <img :src="item.imgURL" class="menu-item-icon">
-                                                        {{item.name}}
-                                <span class="menu-item-num">{{item.number}}</span>
+                            <img :src="item.imgURL" class="menu-item-icon">
+                                                    {{item.name}}
+                            <span class="menu-item-num">{{item.number}}</span>
                         </div>
                     </div>
                 </iscroll-view>

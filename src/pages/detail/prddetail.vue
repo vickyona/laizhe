@@ -88,7 +88,7 @@
                 </p>
             </div>
        
-            <div @click="handlemore" ref='showmore' class="ticketcontent-more evenmore" mp-role="useDescMoreBtn" style="display: block;">
+            <div @touchstart="handlemore" ref='showmore' class="ticketcontent-more evenmore" mp-role="useDescMoreBtn" style="display: block;">
                 <div mp-role="moreShaddow" class="ticketcontent-shadow">
                 </div>
                 <span mp-role="moreText">
@@ -113,14 +113,15 @@ export default {
   },
   methods: {
     handlemore() {
-      (this.$refs.showuse.style.display = "block"),
-        (this.$refs.showmore.style.display = "none"),
-        (this.$refs.showpackup.style.display = "block");
+      console.log(213);
+      this.$refs.showuse.style.display = "block";
+      this.$refs.showmore.style.display = "none";
+      this.$refs.showpackup.style.display = "block";
     },
     handlesince() {
-      (this.$refs.showuse.style.display = "none"),
-        (this.$refs.showmore.style.display = "block"),
-        (this.$refs.showpackup.style.display = "none");
+      this.$refs.showuse.style.display = "none";
+      this.$refs.showmore.style.display = "block";
+      this.$refs.showpackup.style.display = "none";
     }
   }
 };

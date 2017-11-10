@@ -1,6 +1,6 @@
 <template>
     <div class="header">
-        <router-link to="/search">
+        <router-link to="/">
             <i class="iconfont header-left" >&#xe705;</i>
         </router-link>
         <h1 class="header-title">
