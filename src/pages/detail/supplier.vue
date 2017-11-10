@@ -8,7 +8,7 @@
 		</div>
 		<div class="ticket-ticketcontent-more" @click="handleToogleClick">
 			<div class="ticket-ticketcontent-shadow"></div>
-			<span :class="[{'ticket-prddetail-arrowup' : upDown}, 'iconfont']">&#xe64b;</span>
+			<span :class="[{'ticket-prddetail-arrowup' : upDown}, 'iconfont']">&#xe617;</span>
 		</div>
 	</div>
 </template>
@@ -31,8 +31,6 @@ export default {
 </script>
 
 <style scoped>
-@import "../../assets/font/iconfont.css";
-
 .iconfont {
   speak: none;
   font-style: normal;

@@ -11,8 +11,8 @@
  		</div>
  		<div class="ticket-procard-tagarea">
  			<div class="ticket-procard-ul">
- 				<div class="ticket-procard-li"><span class="iconfont" style="color:#00bcd4;">&#xe610;</span>可定8月28日</div>
- 				<div class="ticket-procard-li"><span class="iconfont" style="color:red; ">&#xe669;</span>不支持退款</div>
+ 				<div class="ticket-procard-li"><span class="iconfont" style="color:#00bcd4;">&#xe880;</span>可定8月28日</div>
+ 				<div class="ticket-procard-li"><span class="iconfont" style="color:red; ">&#xe653;</span>不支持退款</div>
  				<div class="ticket-procard-supplier">去哪儿直销</div>
  			</div>
  		</div>
@@ -28,7 +28,6 @@ export default {
 </script>
 
 <style scoped>
-@import "../../assets/font/iconfont.css";
 .iconfont {
   speak: none;
   font-style: normal;

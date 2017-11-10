@@ -10,7 +10,7 @@
 				<p class="ticket-comment-content" :style="foldClassObject">
 					{{info.commentContent}}
 				</p>
-				<div :class="['ticket-comment-foldbtn', 'iconfont', {'ticket-prddetail-arrowup' : isFold}]" @click="handleClickFold">&#xe64b;</div>
+				<div :class="['ticket-comment-foldbtn', 'iconfont', {'ticket-prddetail-arrowup' : isFold}]" @click="handleClickFold">&#xe617;</div>
 				<div class="ticket-comment-imgs" >
 					<div class="ticket-comment-imgouter" v-for = "(imgs, index) in info.imgUrl">
 						<div class="ticket-comment-imginner">
@@ -21,7 +21,7 @@
 			</div>
 		</div>
 		<a href="#">
-			<div class="ticket-more-refresh border-top">查看全部评论<span class="iconfont">&#xe649;</span></div>
+			<div class="ticket-more-refresh border-top">查看全部评论<span class="iconfont">&#xe617;</span></div>
 		</a>
  	</div>
 </template>
@@ -54,7 +54,6 @@ export default {
 </script>
 
 <style scoped>
-/* @import "../../assets/font/iconfont.css"; */
 .iconfont {
   speak: none;
   font-style: normal;

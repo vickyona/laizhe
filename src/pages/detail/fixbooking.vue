@@ -29,7 +29,6 @@ export default {
 </script>
 
 <style scoped>
-@import "../../assets/font/iconfont.css";
 .ticket-fixbooking-con {
   position: fixed;
   z-index: 82;

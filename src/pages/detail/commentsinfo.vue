@@ -1,11 +1,11 @@
 <template>
  	<div class="ticket-commentsinfo-con">
- 		<span class="ticket-comment-icon iconfont">&#xe608;</span>
- 		<span class="ticket-startlevel  iconfont">&#xe628;&#xe628;&#xe628;&#xe628;&#xe628;</span>
+ 		<span class="ticket-comment-icon iconfont">&#xe694;</span>
+ 		<span class="ticket-startlevel  iconfont">&#xe6c9;&#xe6c9;&#xe6c9;&#xe6c9;&#xe6c9;</span>
  		<span class="ticket-comment-tagscore">5.0分</span>
  		<a href="#" class="ticket-comments-total">
- 			<span class="ticket-comments-totalnum">7条评论&nbsp;</span>
- 			<span class="ticket-comments-rightarrow iconfont">&#xe649;</span>
+ 			<span class="ticket-comments-totalnum">7条评论</span>
+ 			<span class="ticket-comments-rightarrow iconfont">&#xe60b;</span>
  		</a>
  	</div>
 </template>
@@ -19,7 +19,6 @@ export default {
 </script>
 
 <style scoped>
-/* @import "../../assets/font/iconfont.css"; */
 .ticket-commentsinfo-con {
   position: relative;
   margin: 0.2rem 0 0.2rem 0;

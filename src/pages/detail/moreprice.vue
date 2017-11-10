@@ -44,8 +44,6 @@ export default {
 </script>
 
 <style scoped>
-@import "../../assets/font/iconfont.css";
-
 .iconfont {
   speak: none;
   font-style: normal;

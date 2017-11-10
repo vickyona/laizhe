@@ -7,7 +7,7 @@
         <router-link to="/beijing">
           <a class="ticket-header-back iconfont" v-show="isBack">
               <span class="ticket-headerback-bg"></span>
-              <span class="ticket-headerback-icon">&#xe615;</span>
+              <span class="ticket-headerback-icon">&#xe618;</span>
           </a>
         </router-link>
 	</div>
@@ -44,7 +44,6 @@ export default {
 </script>
 
 <style scoped>
-@import "../../assets/font/iconfont.css";
 .iconfont {
   speak: none;
   font-style: normal;

@@ -127,7 +127,6 @@ export default {
 </script>
 
 <style scoped>
-@import "../../assets/font/iconfont.css";
 .prddetail-group {
   margin-top: 0.2rem;
   padding: 0.01rem 0;

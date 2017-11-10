@@ -30,7 +30,6 @@
             <div class="menu-inner-right" ref="right">
                 <iscroll-view class="scroll-view" id="iscrollA"> 
                     <div class="menu-inner">
-                        <!-- <div v-if="1"></div> -->
                         <div class="menu-item" v-for="item in categories[currentIndex].detail" :key="item.id">
                              {{item.name}}
                             <span class="menu-item-num">{{item.number}}</span>

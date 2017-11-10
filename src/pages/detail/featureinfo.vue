@@ -5,7 +5,7 @@
 			<div class="ticket-sightlist" >
 				<span class="ticket-sightlist-item" >
 					<a href="#" class="ticket-sightlist-link">
-						<span class="iconfont">&#xe667;</span>	
+						<span class="iconfont">&#xe781;</span>	
 	                	十渡聚龙湾玻璃栈道
 					</a>
 				</span>
@@ -24,8 +24,6 @@ export default {
 </script>
 
 <style scoped>
-/* @import "../../assets/font/iconfont.css"; */
-
 .iconfont {
   speak: none;
   font-style: normal;

@@ -59,7 +59,6 @@ export default {
 </script>
 
 <style scoped>
-@import "../assets/font/iconfont.css";
 .ticket-order-mask {
   position: fixed;
   top: 0;

@@ -28,8 +28,8 @@
                长隆水上乐园(AAAAA景区)
             </div>
             <div class="imgswipeicon">
-                <span class="iconfont">&#xe636;</span>
-                <em class="imgswipeicon-number">16</em>
+                <span class="iconfont">&#xe6ba;</span>
+                <em class="imgswipeicon-number">3</em>
             </div>
         </div>
     </div>
@@ -72,7 +72,6 @@ export default {
 </script>
 <style>
 @import "~swiper/dist/css/swiper.css";
-@import "../../assets/font/iconfont.css";
 #map {
   width: 100%;
   height: 100px;
