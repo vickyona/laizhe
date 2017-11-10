@@ -21,11 +21,7 @@
                         <img class="swiper-img" src="//img1.qunarzz.com/sight/p0/1707/ab/abb70c851caaa6d8a3.img.jpg_800x800_2284f1c4.jpg" />
                     </div>
                 </swiper-slide>  
-            </swiper>
-            <div class='imgswipe-bar'> 
-                <div class="imgswipe-turn swiper-button-prev iconfont" slot="button-prev">&#xe720;</div>
-                <div class="imgswipe-turn swiper-button-next iconfont" slot="button-next">&#xe649;</div> 
-            </div>     
+            </swiper> 
         </div> 
         <div class="headfeagure-info">
             <div class="headfeagure-title">
