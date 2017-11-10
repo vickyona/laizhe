@@ -92,6 +92,7 @@ export default {
 
 <style>
 .header-keyword {
+  display: flex;
   margin-top: 0.88rem;
   padding: 0 0.2rem 0.1rem 0.2rem;
   background: #00afc7;
@@ -101,8 +102,8 @@ export default {
 .city-keyword {
   width: 100%;
   height: 0.3rem;
+  padding: .16rem 0.1rem .16rem .1rem;
   line-height: 0.3rem;
-  padding: 0.16rem 0 0.16rem 0.1rem;
   background: #fff;
   border: 0;
   border-radius: 0.06rem;
