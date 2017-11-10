@@ -4,10 +4,12 @@
             <router-link to="/"><a class='ticket-header-goback iconfont'>&#xe615;</a></router-link>
             <h1 class='ticket-header-title'>广州长隆旅游度假区</h1>
         </div>
-        <a class="ticket-header-back iconfont" v-show="isBack" @click="handleBackClick">
-			<span class="ticket-headerback-bg"></span>
-			<span class="ticket-headerback-icon">&#xe615;</span>
-        </a>
+        <router-link to="/beijing">
+          <a class="ticket-header-back iconfont" v-show="isBack">
+              <span class="ticket-headerback-bg"></span>
+              <span class="ticket-headerback-icon">&#xe615;</span>
+          </a>
+        </router-link>
 	</div>
 </template>
 
@@ -33,9 +35,6 @@ export default {
         this.opacity = opacityValue;
         this.isBack = true;
       }
-    },
-    handleBackClick: function() {
-      window.history.go(-1);
     }
   },
   mounted() {
